@@ -6,16 +6,15 @@ def solve(wizards, constraints):
     constraint_map = utils.get_constraint_map(constraints)
     violations = utils.check_violations(wizards, constraint_map)
 
-
+    sorted_wizards = utils.sort_wizards(wizards, constraint_map)
     while violations > 0:
         starting_violations = violations
-        for i in range(len(wizards)):
+        for wizard in sorted_wizards:
             best_cur_violations = violations
-            best_j = i
 
-            cur_wizard = wizards[i]
-            wizards.remove(cur_wizard)
-            wizards = [cur_wizard] + wizards
+            best_j = wizards.index(wizard)
+            wizards.remove(wizard)
+            wizards = [wizard] + wizards
 
             for j in range(len(wizards) - 1):
                 temp_violations = utils.check_violations(wizards, constraint_map)
@@ -24,7 +23,7 @@ def solve(wizards, constraints):
                     best_j = j
                 wizards[j], wizards[j+1] = wizards[j+1], wizards[j]
             wizards.pop()
-            wizards.insert(best_j, cur_wizard)
+            wizards.insert(best_j, wizard)
             violations = best_cur_violations
         if starting_violations == violations:
             random.shuffle(wizards)
