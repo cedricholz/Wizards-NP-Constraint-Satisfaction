@@ -36,6 +36,7 @@ def sort_wizards(wizards, constraint_map):
     l += wizards
     return l
 
+
 def get_constraint_map(constraints):
     d = {}
     for constraint in constraints:
@@ -46,3 +47,26 @@ def get_constraint_map(constraints):
             d[wizard].append(constraint[:2])
     return d
 
+
+def check_violations(ordered_wizards, constraint_map):
+    violations = 0
+    prev_wizards = set(ordered_wizards[:1])
+    next_wizards = set(ordered_wizards[1:])
+
+    for i in range(1, len(ordered_wizards) - 1):
+        cur_wizard = ordered_wizards[i]
+        next_wizards.remove(cur_wizard)
+        if cur_wizard in constraint_map:
+            cur_constraints = constraint_map[cur_wizard]
+            for constraint in cur_constraints:
+                wizard1 = constraint[0]
+                wizard2 = constraint[1]
+
+                if wizard1 in prev_wizards and wizard2 in next_wizards:
+                    violations += 1
+
+                elif wizard2 in prev_wizards and wizard1 in next_wizards:
+                    violations += 1
+
+        prev_wizards.add(cur_wizard)
+    return violations

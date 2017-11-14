@@ -9,10 +9,8 @@
 #     write_output(args.output_file, solution)
 
 
-
-
 # def swap(num_wizards, num_constraints, wizards, constraints):
-#     constraint_map = get_constraint_map(constraints)
+#     constraint_map = utils.get_constraint_map(constraints)
 #
 #     violations = check_violations(wizards, constraint_map)
 #
@@ -31,10 +29,21 @@
 #                     violations = temp_violations
 #                 temp_list[i], temp_list[j] = temp_list[j], temp_list[i]
 #
-#         wizards[besti], wizards[bestj] = wizards[bestj], wizards[besti]
-#         temp_list[besti], temp_list[bestj] = temp_list[bestj], temp_list[besti]
+#         if besti == bestj:
+#             random.shuffle(wizards)
+#             temp_list = wizards[:]
+#             print(violations)
+#             print(wizards)
+#             violations = check_violations(wizards, constraint_map)
+#         else:
+#             x = violations
+#             wizards[besti], wizards[bestj] = wizards[bestj], wizards[besti]
+#             temp_list[besti], temp_list[bestj] = temp_list[bestj], temp_list[besti]
 #     return temp_list
-#
+
+
+
+
 # def inserting(num_wizards, num_constraints, wizards, constraints):
 #     constraint_map = get_constraint_map(constraints)
 #
