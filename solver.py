@@ -3,11 +3,8 @@ import random
 import utils
 
 
-
-
 def solve(num_wizards, num_constraints, wizards, constraints):
     constraint_map = utils.get_constraint_map(constraints)
-
     violations = utils.check_violations(wizards, constraint_map)
 
     x = 0
@@ -35,7 +32,7 @@ def solve(num_wizards, num_constraints, wizards, constraints):
             random.shuffle(wizards)
             print(violations)
             print(wizards)
-            violations = check_violations(wizards, constraint_map)
+            violations = utils.check_violations(wizards, constraint_map)
         else:
             x = violations
 
@@ -70,6 +67,7 @@ def run(inputfile, outputfile):
     print("\nFound Solution")
     print(solution)
     write_output(outputfile, solution)
+
 
 folder_name = 'Armans'
 wizard_number = '50'
