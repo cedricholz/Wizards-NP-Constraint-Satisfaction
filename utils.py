@@ -36,6 +36,7 @@ def sort_wizards(ws, cm):
         wizards.remove(name)
         del constraint_map[name]
     l += wizards
+
     return l
 
 

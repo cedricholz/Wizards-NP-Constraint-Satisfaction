@@ -1,5 +1,6 @@
 import random
 import utils
+import datetime
 
 
 def solve(wizards, constraints):
@@ -21,7 +22,7 @@ def solve(wizards, constraints):
                 if temp_violations <= best_cur_violations:
                     best_cur_violations = temp_violations
                     best_j = j
-                wizards[j], wizards[j+1] = wizards[j+1], wizards[j]
+                wizards[j], wizards[j + 1] = wizards[j + 1], wizards[j]
             wizards.pop()
             wizards.insert(best_j, wizard)
             violations = best_cur_violations
@@ -41,7 +42,11 @@ def run(inputfile, outputfile):
     utils.write_output(outputfile, solution)
 
 
-folder_name = 'Keerthis'
-wizard_number = '35'
+folder_name = 'Armans'
+wizard_number = '50'
+
+print(datetime.datetime.now())
 
 run(folder_name + '/input' + wizard_number + '.in', folder_name + '/output' + wizard_number + '.out')
+
+print(datetime.datetime.now())

@@ -44,7 +44,7 @@
 
 
 
-#Best place each guy can go each move
+#Best place each guy can go each iteration
 # def inserting(num_wizards, num_constraints, wizards, constraints):
 #     constraint_map = utils.get_constraint_map(constraints)
 #     violations = utils.check_violations(wizards, constraint_map)
@@ -76,7 +76,7 @@
 #     return wizards
 
 
-#Absolute best place anything can go each move
+#Absolute best place one thing can go each iteration
 # def insert(wizards, constraints):
 #     constraint_map = utils.get_constraint_map(constraints)
 #     violations = utils.check_violations(wizards, constraint_map)
@@ -117,11 +117,11 @@
 
 
 
-# def backtracking(num_wizards, num_constraints, wizards, constraints):
-#     constraint_map = get_constraint_map(constraints)
+# def backtracking(wizards, constraints):
+#     constraint_map = utils.get_constraint_map(constraints)
 #
 #     map_copy = dict(constraint_map)
-#     wizards = sort_wizards(wizards, map_copy)[::-1]
+#     wizards = utils.sort_wizards(wizards, map_copy)
 #
 #     def helper(cur_list, wizards_left):
 #         if len(wizards_left) == 0:
@@ -129,7 +129,7 @@
 #
 #         for wizard in wizards_left:
 #             temp_list = cur_list + [wizard]
-#             violates = check_violates(temp_list, constraint_map)
+#             violates = utils.check_violates(temp_list, constraint_map)
 #             if not violates:
 #                 print(temp_list)
 #                 temp_wizards = wizards_left[:]
