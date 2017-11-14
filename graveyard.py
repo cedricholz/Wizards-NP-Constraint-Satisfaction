@@ -44,37 +44,80 @@
 
 
 
+#Best place each guy can go each move
 # def inserting(num_wizards, num_constraints, wizards, constraints):
-#     constraint_map = get_constraint_map(constraints)
-#
-#     violations = check_violations(wizards, constraint_map)
+#     constraint_map = utils.get_constraint_map(constraints)
+#     violations = utils.check_violations(wizards, constraint_map)
 #
 #     while violations > 0:
+#         starting_violations = violations
 #         for i in range(len(wizards)):
-#             best_violations = violations
+#             best_cur_violations = violations
 #             best_j = i
 #
 #             cur_wizard = wizards[i]
 #             wizards.remove(cur_wizard)
+#             wizards = [cur_wizard] + wizards
 #
-#             for j in range(len(wizards) + 1):
-#                 if j != i:
-#                     wizards.insert(j, cur_wizard)
-#                     temp_violations = check_violations(wizards, constraint_map)
-#                     if temp_violations < best_violations:
-#                         best_violations = temp_violations
-#                         best_j = j
-#                     wizards.remove(cur_wizard)
+#             for j in range(len(wizards) - 1):
+#                 temp_violations = utils.check_violations(wizards, constraint_map)
+#                 if temp_violations <= best_cur_violations:
+#                     best_cur_violations = temp_violations
+#                     best_j = j
+#                 wizards[j], wizards[j+1] = wizards[j+1], wizards[j]
+#             wizards.pop()
 #             wizards.insert(best_j, cur_wizard)
+#             violations = best_cur_violations
+#         if starting_violations == violations:
+#             random.shuffle(wizards)
+#             print("Stuck at " + str(violations) + " violations")
+#             print(wizards)
+#             violations = utils.check_violations(wizards, constraint_map)
+#     return wizards
+
+
+#Absolute best place anything can go each move
+# def insert(wizards, constraints):
+#     constraint_map = utils.get_constraint_map(constraints)
+#     violations = utils.check_violations(wizards, constraint_map)
 #
-#             violations = best_violations
+#     while violations > 0:
+#         starting_violations = violations
+#         best_wizard = wizards[0]
+#         best_j = 0
+#         best_cur_violations = violations
+#
+#         x = wizards
+#         for i in range(len(wizards)):
+#             cur_wizard = wizards[i]
+#             wizards.remove(cur_wizard)
+#             wizards = [cur_wizard] + wizards
+#             x = wizards
+#
+#             for j in range(len(wizards) - 1):
+#                 temp_violations = utils.check_violations(wizards, constraint_map)
+#                 if temp_violations < best_cur_violations:
+#                     best_cur_violations = temp_violations
+#                     best_j = j
+#                     best_wizard = cur_wizard
+#                 wizards[j], wizards[j + 1] = wizards[j + 1], wizards[j]
+#             wizards.pop()
+#             wizards.insert(i, cur_wizard)
+#
+#         wizards.remove(best_wizard)
+#         wizards.insert(best_j, best_wizard)
+#         violations = best_cur_violations
+#
+#         if starting_violations == violations:
+#             random.shuffle(wizards)
+#             print("Stuck at " + str(violations) + " violations")
+#             print(wizards)
+#             violations = utils.check_violations(wizards, constraint_map)
 #     return wizards
 
 
 
-
-
-# def naive(num_wizards, num_constraints, wizards, constraints):
+# def backtracking(num_wizards, num_constraints, wizards, constraints):
 #     constraint_map = get_constraint_map(constraints)
 #
 #     map_copy = dict(constraint_map)

@@ -21,7 +21,9 @@ def check_violates(ordered_wizards, constraint_map):
     return False
 
 
-def sort_wizards(wizards, constraint_map):
+def sort_wizards(ws, cm):
+    wizards = list(ws)
+    constraint_map = dict(cm)
     l = []
     while len(constraint_map) > 0:
         m = 0
@@ -55,7 +57,10 @@ def check_violations(ordered_wizards, constraint_map):
 
     for i in range(1, len(ordered_wizards) - 1):
         cur_wizard = ordered_wizards[i]
-        next_wizards.remove(cur_wizard)
+        try:
+            next_wizards.remove(cur_wizard)
+        except:
+            print(5)
         if cur_wizard in constraint_map:
             cur_constraints = constraint_map[cur_wizard]
             for constraint in cur_constraints:
@@ -70,3 +75,25 @@ def check_violations(ordered_wizards, constraint_map):
 
         prev_wizards.add(cur_wizard)
     return violations
+
+
+def read_input(filename):
+    with open(filename) as f:
+        num_wizards = int(f.readline())
+        num_constraints = int(f.readline())
+        constraints = []
+        wizards = set()
+        for _ in range(num_constraints):
+            c = f.readline().split()
+            constraints.append(c)
+            for w in c:
+                wizards.add(w)
+
+    wizards = list(wizards)
+    return num_wizards, num_constraints, wizards, constraints
+
+
+def write_output(filename, solution):
+    with open(filename, "w") as f:
+        for wizard in solution:
+            f.write("{0} ".format(wizard))
