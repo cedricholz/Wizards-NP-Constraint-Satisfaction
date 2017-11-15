@@ -62,9 +62,9 @@ def run(inputfile, outputfile):
 #
 # run(folder_name + '/input' + wizard_number + '.in', folder_name + '/output' + wizard_number + '.out')
 
-def run_inputs(number):
+def run_inputs(number, skip_list):
     for i in range(10):
-        if i != -1:
+        if i not in skip_list:
             start_time = time.time()
             print("\nBeginning " + 'input' + number + '_' + str(i))
             run('phase2_inputs/inputs' + number + '/input' + number + '_' + str(i) + '.in',
@@ -72,6 +72,6 @@ def run_inputs(number):
             print('Elapsed time for ' + 'input' + number + '_' + str(i) + ": " + str(time.time()-start_time))
 
 
-#run_inputs('20')
-#run_inputs('35')
-run_inputs('50')
+run_inputs('20', [0,1,2,4,5,6,7,8,9])
+run_inputs('35', [])
+run_inputs('50', [])
