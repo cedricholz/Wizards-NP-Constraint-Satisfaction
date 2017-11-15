@@ -1,6 +1,7 @@
 import random
 import utils
 import datetime
+import time
 
 
 def place_in_best_location(violations, wizard, wizards, constraint_map):
@@ -38,13 +39,13 @@ def solve(wizards, constraints):
             sequence.append(violations)
         if starting_violations == violations:
             random.shuffle(wizards)
-            print("Sequence: " + str(sequence))
-            print("Stuck at " + str(violations) + " violations")
-            print(wizards)
+            #print("Sequence: " + str(sequence))
+            #print("Stuck at " + str(violations) + " violations")
+            #print(wizards)
             violations = utils.check_violations(wizards, constraint_map)
             sequence = [violations]
 
-    print("\n\nSolution Sequence" + str(sequence))
+    print("\nSolution Sequence" + str(sequence))
     return wizards
 
 
@@ -56,11 +57,20 @@ def run(inputfile, outputfile):
     utils.write_output(outputfile, solution)
 
 
-folder_name = 'Alexs'
-wizard_number = '50'
+# folder_name = 'Alexs'
+# wizard_number = '50'
+#
+# run(folder_name + '/input' + wizard_number + '.in', folder_name + '/output' + wizard_number + '.out')
 
-print(datetime.datetime.now())
+def run_inputs(number):
+    for i in range(10):
+        start_time = time.time()
+        print("\nBeginning " + 'input' + number + '_' + str(i))
+        run('phase2_inputs/inputs' + number + '/input' + number + '_' + str(i) + '.in',
+            'phase2_inputs/inputs' + number + '/output' + number + '_' + str(i) + '.out')
+        print('Elapsed time for ' + 'input' + number + '_' + str(i) + ": " + str(time.time()-start_time))
 
-run(folder_name + '/input' + wizard_number + '.in', folder_name + '/output' + wizard_number + '.out')
 
-print(datetime.datetime.now())
+run_inputs('20')
+run_inputs('35')
+run_inputs('50')
