@@ -64,13 +64,14 @@ def run(inputfile, outputfile):
 
 def run_inputs(number):
     for i in range(10):
-        start_time = time.time()
-        print("\nBeginning " + 'input' + number + '_' + str(i))
-        run('phase2_inputs/inputs' + number + '/input' + number + '_' + str(i) + '.in',
-            'phase2_inputs/inputs' + number + '/output' + number + '_' + str(i) + '.out')
-        print('Elapsed time for ' + 'input' + number + '_' + str(i) + ": " + str(time.time()-start_time))
+        if i != -1:
+            start_time = time.time()
+            print("\nBeginning " + 'input' + number + '_' + str(i))
+            run('phase2_inputs/inputs' + number + '/input' + number + '_' + str(i) + '.in',
+                'phase2_inputs/inputs' + number + '/output' + number + '_' + str(i) + '.out')
+            print('Elapsed time for ' + 'input' + number + '_' + str(i) + ": " + str(time.time()-start_time))
 
 
-run_inputs('20')
-run_inputs('35')
+#run_inputs('20')
+#run_inputs('35')
 run_inputs('50')
