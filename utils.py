@@ -58,10 +58,8 @@ def check_violations(ordered_wizards, constraint_map):
 
     for i in range(1, len(ordered_wizards) - 1):
         cur_wizard = ordered_wizards[i]
-        try:
-            next_wizards.remove(cur_wizard)
-        except:
-            print(5)
+        next_wizards.remove(cur_wizard)
+
         if cur_wizard in constraint_map:
             cur_constraints = constraint_map[cur_wizard]
             for constraint in cur_constraints:
