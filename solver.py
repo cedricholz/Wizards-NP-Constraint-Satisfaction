@@ -42,9 +42,9 @@ def solve(wizards, constraints, event):
         if starting_violations == violations:
             random.shuffle(wizards)
             random.shuffle(sorted_wizards)
-            print("Sequence: " + str(sequence))
-            print("Stuck at " + str(violations) + " violations")
-            print(wizards)
+            # print("Sequence: " + str(sequence))
+            # print("Stuck at " + str(violations) + " violations")
+            # print(wizards)
             violations = utils.check_violations(wizards, constraint_map)
             sequence = [violations]
     event.set()
@@ -86,9 +86,10 @@ def multi_process(num_inputs, to_do):
 # Multiprocessing
 if __name__ == "__main__":
 
+    #to_do_list_20 = [3]
     to_do_list_20 = [3]
     to_do_list_35 = []
-    to_do_list_50 = [0,1,2,3,4,8,9]
+    to_do_list_50 = [0,2,8,9]
 
     for i in to_do_list_20:
         multi_process("20", i)
