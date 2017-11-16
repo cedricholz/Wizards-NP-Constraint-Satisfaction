@@ -36,7 +36,7 @@ def check_best_violations(violations, wizards, best_so_far_file):
         best_list = [str(violations)] + wizards
         utils.write_output(best_so_far_file, best_list)
 
-def solve(wizards, constraints, best_so_far_file):
+def solve(wizards, constraints, event, best_so_far_file):
     constraint_map = utils.get_constraint_map(constraints)
     violations = utils.check_violations(wizards, constraint_map)
 
@@ -58,31 +58,32 @@ def solve(wizards, constraints, best_so_far_file):
         if starting_violations == violations:
             random.shuffle(wizards)
             random.shuffle(sorted_wizards)
-            print("Sequence: " + str(sequence))
-            print("Stuck at " + str(violations) + " violations")
-            print(wizards)
+            # print("Sequence: " + str(sequence))
+            # print("Stuck at " + str(violations) + " violations")
+            # print(wizards)
             violations = utils.check_violations(wizards, constraint_map)
             sequence = [violations]
+    event.set()
     print("\nSolution Sequence" + str(sequence))
     return wizards
 
 
-def run(inputfile, outputfile, best_so_far_file):
+def run(inputfile, outputfile, event, best_so_far_file):
     num_wizards, num_constraints, wizards, constraints = utils.read_input(inputfile)
-    solution = solve(wizards, constraints, best_so_far_file)
+    solution = solve(wizards, constraints, event, best_so_far_file)
     print("\nFound Solution")
     print(solution)
     utils.write_output(outputfile, solution)
 
 
-def run_phase2_inputs(number, i):
+def run_phase2_inputs(number, i, event):
     start_time = time.time()
     input_file = 'phase2_inputs/inputs' + number + '/input' + number + '_' + str(i) + '.in'
     output_file = 'phase2_inputs/inputs' + number + '/output' + number + '_' + str(i) + '.out'
     best_so_far_file = 'phase2_inputs/inputs' + number + '/input' + number + '_' + str(i) + '_best_so_far' + '.in'
 
     print("\nBeginning " + 'input' + number + '_' + str(i))
-    run(input_file, output_file, best_so_far_file)
+    run(input_file, output_file, event, best_so_far_file)
     print('Elapsed time for ' + 'input' + number + '_' + str(i) + ": " + str(time.time() - start_time))
 
 
@@ -91,11 +92,14 @@ def multi_process(num_inputs, to_do):
 
     p = multiprocessing.Pool(cpus_to_use)
     m = multiprocessing.Manager()
+    event = m.Event()
 
     for i in range(cpus_to_use):
-        p.apply_async(run_phase2_inputs, (num_inputs, to_do))
+        p.apply_async(run_phase2_inputs, (num_inputs, to_do, event))
     p.close()
 
+    event.wait()
+    p.terminate()
 
 
 # Multiprocessing
@@ -106,31 +110,15 @@ if __name__ == "__main__":
     to_do_list_35 = []
     to_do_list_50 = [0, 2, 8, 9]
 
-    cpus_to_use = multiprocessing.cpu_count()
+    for i in to_do_list_20:
+        multi_process("20", i)
 
-    p = multiprocessing.Pool(cpus_to_use)
-    m = multiprocessing.Manager()
+    for i in to_do_list_35:
+        multi_process("35", i)
 
-    event = m.Event()
+    for i in to_do_list_50:
+        multi_process("50", i)
 
-    p.apply_async(run_phase2_inputs, ('50', 0))
-
-    p.apply_async(run_phase2_inputs, ('50', 2))
-
-    p.apply_async(run_phase2_inputs, ('50', 8))
-
-    p.apply_async(run_phase2_inputs, ('50', 9))
-
-    p.apply_async(run_phase2_inputs, ('50', 0))
-
-    p.apply_async(run_phase2_inputs, ('50', 8))
-
-    p.apply_async(run_phase2_inputs, ('20', 3))
-
-    p.apply_async(run_phase2_inputs, ('20', 3))
-
-    event.wait()
-    p.close()
 
 # run_phase2_inputs('35', [])
 # run_phase2_inputs('50', [2, 8, 9])
