@@ -18,7 +18,6 @@ def processInput(input_file, output_file):
     fout = open(output_file, "r")
 
     num_wiz_in_input = int(fin.readline().split()[0])
-    # input_wizard_set = set(fin.readline().split())
     num_constraints = int(fin.readline().split()[0])
 
     output_ordering = fout.readline().split()
@@ -31,9 +30,6 @@ def processInput(input_file, output_file):
 
     if (len(output_ordering_set) != len(output_ordering)):
         return "The output ordering contains repeated wizards."
-
-    # if (input_wizard_set != output_ordering_set):
-    #     return "The output ordering contains wizards that are different from the ones in the input ordering."
 
     # Counts how many constraints are satisfied.
     constraints_satisfied = 0
@@ -57,12 +53,13 @@ def processInput(input_file, output_file):
     return constraints_satisfied, num_constraints, constraints_failed
 
 
-number = "50"
-i = 4
+def validate_file(number, i):
+    input_file = 'phase2_inputs/inputs' + number + '/input' + number + '_' + str(i) + '.in'
+    output_file = 'outputs/output' + number + '_' + str(i) + ".out"
+    print(processInput(input_file, output_file))
 
-input_file = 'phase2_inputs/inputs' + number + '/input' + number + '_' + str(i) + '.in'
-output_file = 'outputs/output' + number + '_' + str(i) + ".out"
-print(processInput(input_file, output_file))
 
-if __name__ == '__main__':
-    main(sys.argv[1:])
+numbers = ['20', '35', '50']
+for n in numbers:
+    for i in range(10):
+        validate_file(n, i)
