@@ -2,6 +2,13 @@ import argparse
 import utils
 import random
 
+# run_friend_inputs('Alexs', '50')
+
+
+# def run_friend_inputs(folder_name, wizard_number, event):
+#     input_file = folder_name + '/input' + wizard_number + '.in'
+#     output_file = folder_name + '/output' + wizard_number + '.out'
+#     run(input_file, output_file, event)
 
 #Check each best place
 def get_best_locations(violations, wizard, wizards, constraint_map):

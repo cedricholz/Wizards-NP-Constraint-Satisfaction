@@ -2,6 +2,7 @@ import random
 import utils
 import datetime
 import time
+import multiprocessing
 
 
 def place_in_best_location(violations, wizard, wizards, constraint_map):
@@ -23,11 +24,12 @@ def place_in_best_location(violations, wizard, wizards, constraint_map):
     return best_cur_violations, wizards
 
 
-def solve(wizards, constraints):
+def solve(wizards, constraints, event):
     constraint_map = utils.get_constraint_map(constraints)
     violations = utils.check_violations(wizards, constraint_map)
 
     sorted_wizards = utils.sort_wizards(wizards, constraint_map)
+    random.shuffle(sorted_wizards)
 
     sequence = [violations]
     while violations > 0:
@@ -39,39 +41,65 @@ def solve(wizards, constraints):
             sequence.append(violations)
         if starting_violations == violations:
             random.shuffle(wizards)
-            #print("Sequence: " + str(sequence))
-            #print("Stuck at " + str(violations) + " violations")
-            #print(wizards)
+            random.shuffle(sorted_wizards)
+            print("Sequence: " + str(sequence))
+            print("Stuck at " + str(violations) + " violations")
+            print(wizards)
             violations = utils.check_violations(wizards, constraint_map)
             sequence = [violations]
-
+    event.set()
     print("\nSolution Sequence" + str(sequence))
     return wizards
 
 
-def run(inputfile, outputfile):
+def run(inputfile, outputfile, event):
     num_wizards, num_constraints, wizards, constraints = utils.read_input(inputfile)
-    solution = solve(wizards, constraints)
+    solution = solve(wizards, constraints, event)
     print("\nFound Solution")
     print(solution)
     utils.write_output(outputfile, solution)
 
 
-# folder_name = 'Alexs'
-# wizard_number = '50'
-#
-# run(folder_name + '/input' + wizard_number + '.in', folder_name + '/output' + wizard_number + '.out')
 
-def run_inputs(number, to_do_list):
-    for i in range(10):
-        if i in to_do_list:
-            start_time = time.time()
-            print("\nBeginning " + 'input' + number + '_' + str(i))
-            run('phase2_inputs/inputs' + number + '/input' + number + '_' + str(i) + '.in',
-                'phase2_inputs/inputs' + number + '/output' + number + '_' + str(i) + '.out')
-            print('Elapsed time for ' + 'input' + number + '_' + str(i) + ": " + str(time.time()-start_time))
+def run_phase2_inputs(number, i, event):
+    start_time = time.time()
+    print("\nBeginning " + 'input' + number + '_' + str(i))
+    run('phase2_inputs/inputs' + number + '/input' + number + '_' + str(i) + '.in',
+        'phase2_inputs/inputs' + number + '/output' + number + '_' + str(i) + '.out', event)
+    print('Elapsed time for ' + 'input' + number + '_' + str(i) + ": " + str(time.time() - start_time))
 
 
-run_inputs('20', [3])
-run_inputs('35', [5,7,8,9])
-run_inputs('50', [0,1,2,3,4,5,6,7,8,9])
+def multi_process(num_inputs, to_do):
+    cpus_to_use = multiprocessing.cpu_count()
+
+    p = multiprocessing.Pool(cpus_to_use)
+    m = multiprocessing.Manager()
+    event = m.Event()
+
+    for i in range(cpus_to_use):
+        p.apply_async(run_phase2_inputs, (num_inputs, to_do, event))
+    p.close()
+
+    event.wait()
+    p.terminate()
+
+# Multiprocessing
+if __name__ == "__main__":
+
+    to_do_list_20 = [3]
+    to_do_list_35 = []
+    to_do_list_50 = [0,1,2,3,4,8,9]
+
+    for i in to_do_list_20:
+        multi_process("20", i)
+
+    for i in to_do_list_35:
+        multi_process("35", i)
+
+    for i in to_do_list_50:
+        multi_process("50", i)
+
+
+# run_phase2_inputs('35', [])
+# run_phase2_inputs('50', [2, 8, 9])
+# run_phase2_inputs('20', [3])
