@@ -31,6 +31,7 @@ def check_best_violations(violations, wizards, best_so_far_file):
             best_violations = int(f.readline().split()[0])
             if violations < best_violations:
                 best_list = [str(violations)] + wizards
+                print("Found Better List " + str(best_list))
                 utils.write_output(best_so_far_file, best_list)
     except:
         best_list = [str(violations)] + wizards
@@ -102,9 +103,9 @@ def multi_process(num_inputs, to_do):
 if __name__ == "__main__":
 
     # to_do_list_20 = [3]
-    to_do_list_20 = [3]
-    to_do_list_35 = []
-    to_do_list_50 = [0, 2, 8, 9]
+    # to_do_list_20 = [3]
+    # to_do_list_35 = []
+    # to_do_list_50 = [0, 8, 9]
 
     cpus_to_use = multiprocessing.cpu_count()
 
@@ -115,15 +116,15 @@ if __name__ == "__main__":
 
     p.apply_async(run_phase2_inputs, ('50', 0))
 
-    p.apply_async(run_phase2_inputs, ('50', 2))
+    p.apply_async(run_phase2_inputs, ('50', 0))
+
+    p.apply_async(run_phase2_inputs, ('50', 8))
 
     p.apply_async(run_phase2_inputs, ('50', 8))
 
     p.apply_async(run_phase2_inputs, ('50', 9))
 
-    p.apply_async(run_phase2_inputs, ('50', 0))
-
-    p.apply_async(run_phase2_inputs, ('50', 8))
+    p.apply_async(run_phase2_inputs, ('50', 9))
 
     p.apply_async(run_phase2_inputs, ('20', 3))
 
