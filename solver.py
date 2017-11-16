@@ -59,9 +59,9 @@ def solve(wizards, constraints, best_so_far_file):
         if starting_violations == violations:
             random.shuffle(wizards)
             random.shuffle(sorted_wizards)
-            print("Sequence: " + str(sequence))
-            print("Stuck at " + str(violations) + " violations")
-            print(wizards)
+            # print("Sequence: " + str(sequence))
+            # print("Stuck at " + str(violations) + " violations")
+            # print(wizards)
             violations = utils.check_violations(wizards, constraint_map)
             sequence = [violations]
     print("\nSolution Sequence" + str(sequence))
