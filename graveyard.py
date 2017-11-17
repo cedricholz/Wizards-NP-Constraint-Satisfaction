@@ -2,6 +2,7 @@ import argparse
 import utils
 import random
 
+
 # run_friend_inputs('Alexs', '50')
 
 
@@ -10,7 +11,7 @@ import random
 #     output_file = folder_name + '/output' + wizard_number + '.out'
 #     run(input_file, output_file, event)
 
-#Check each best place
+# Check each best place
 def get_best_locations(violations, wizard, wizards, constraint_map):
     wizards = wizards[:]
     best_cur_violations = violations
@@ -36,8 +37,6 @@ def get_best_locations(violations, wizard, wizards, constraint_map):
 
 
 def solve(wizards, constraints):
-
-
     constraint_map = utils.get_constraint_map(constraints)
     sorted_wizards = utils.sort_wizards(wizards, constraint_map)
 
@@ -80,6 +79,31 @@ def solve(wizards, constraints):
         r = helper(wizards, sorted_wizards, 0)
 
     return r
+
+
+# Checks if there is a violation
+def check_violates(ordered_wizards, constraint_map):
+    prev_wizards = set(ordered_wizards[:1])
+    next_wizards = set(ordered_wizards[1:])
+
+    for i in range(1, len(ordered_wizards) - 1):
+        cur_wizard = ordered_wizards[i]
+        next_wizards.remove(cur_wizard)
+        if cur_wizard in constraint_map:
+            cur_constraints = constraint_map[cur_wizard]
+            for constraint in cur_constraints:
+                wizard1 = constraint[0]
+                wizard2 = constraint[1]
+
+                if wizard1 in prev_wizards and wizard2 in next_wizards:
+                    return True
+
+                elif wizard2 in prev_wizards and wizard1 in next_wizards:
+                    return True
+
+        prev_wizards.add(cur_wizard)
+    return False
+
 
 # Best so far. Moves the person with the most constraints first
 def place_in_best_location(violations, wizard, wizards, constraint_map):
