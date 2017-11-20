@@ -104,7 +104,7 @@ def solve(wizards, constraints, event, best_so_far_file):
             sequence.append(violations)
         if starting_violations == violations:
             random.shuffle(wizards)
-            # random.shuffle(sorted_wizards)
+            random.shuffle(sorted_wizards)
             # print("Sequence: " + str(sequence))
             # print("Stuck at " + str(violations) + " violations")
             # print(wizards)
