@@ -58,6 +58,7 @@ def check_best_violations(violations, wizards, best_so_far_file):
             best_violations = int(f.readline().split()[0])
             if violations < best_violations:
                 best_list = [str(violations)] + wizards
+                print("Best violations updated: " + violations + " " + best_so_far_file)
                 utils.write_output(best_so_far_file, best_list)
     except:
         best_list = [str(violations)] + wizards
@@ -104,9 +105,9 @@ def solve(wizards, constraints, event, best_so_far_file):
         if starting_violations == violations:
             random.shuffle(wizards)
             random.shuffle(sorted_wizards)
-            # print("Sequence: " + str(sequence))
-            # print("Stuck at " + str(violations) + " violations")
-            # print(wizards)
+            print("Sequence: " + str(sequence))
+            print("Stuck at " + str(violations) + " violations")
+            print(wizards)
             violations = utils.check_violations(wizards, constraint_map)
             sequence = [violations]
     event.set()
