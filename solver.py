@@ -3,22 +3,24 @@ import utils
 import datetime
 import time
 import multiprocessing
+from multiprocessing import Pool
 import sys
 
-"""
-Places a wizard in the location causing
-the least amount of constraint violations
 
-Input:
-    violations: Number of constraint violations to beat
-    wizard: Wizard we're finding a better place for
-    wizards: Current ordering of the wizards
-    constraint_map: Wizard names mapped to a list of their constraits
-
-Output:
-    best_cur_violations: Number of violations after the move
-"""
 def place_in_best_location(violations, wizard, wizards, constraint_map):
+    """
+    Places a wizard in the location causing
+    the least amount of constraint violations
+
+    Input:
+        violations: Number of constraint violations to beat
+        wizard: Wizard we're finding a better place for
+        wizards: Current ordering of the wizards
+        constraint_map: Wizard names mapped to a list of their constraits
+
+    Output:
+        best_cur_violations: Number of violations after the move
+    """
     best_cur_violations = violations
 
     best_j = wizards.index(wizard)
@@ -36,20 +38,21 @@ def place_in_best_location(violations, wizard, wizards, constraint_map):
 
     return best_cur_violations, wizards
 
-"""
-Checks the current wizard ordering against a file
-containing the best ordering we've seen so far
-and the number of constraints it violates. Has to
-be in a file because the program is running on
-multiple cores.
 
-Input:
-    violations: Violations the wizard ordering has
-    wizards: The wizard ordering
-    best_so_far_file: name of the file containing the
-                      best ordering found so far
-"""
 def check_best_violations(violations, wizards, best_so_far_file):
+    """
+    Checks the current wizard ordering against a file
+    containing the best ordering we've seen so far
+    and the number of constraints it violates. Has to
+    be in a file because the program is running on
+    multiple cores.
+
+    Input:
+        violations: Violations the wizard ordering has
+        wizards: The wizard ordering
+        best_so_far_file: name of the file containing the
+                          best ordering found so far
+    """
     try:
         with open(best_so_far_file) as f:
             best_violations = int(f.readline().split()[0])
@@ -60,26 +63,27 @@ def check_best_violations(violations, wizards, best_so_far_file):
         best_list = [str(violations)] + wizards
         utils.write_output(best_so_far_file, best_list)
 
-"""
-Takes an ordering of wizards, and one by one 
-(most constrained first) places them in the location 
-that causes the least amount of constraint violations.
-If it gets stuck at a place where no single move
-decreases the amount of violations, it shuffles
-the ordering and starts again.
 
-Input:
-    wizards: Number of constraint violations to beat
-    constraints: Constraints from inputfile
-    event: Multithreading event, when one core finds
-           A solution and event.set() is called, they
-           all stop and move on to the next input
-    best_so_far_file: name of the file containing the
-                      best ordering found so far
-Output:
-    wizards: A valid ordering of the wizards
-"""
 def solve(wizards, constraints, event, best_so_far_file):
+    """
+    Takes an ordering of wizards, and one by one
+    (most constrained first) places them in the location
+    that causes the least amount of constraint violations.
+    If it gets stuck at a place where no single move
+    decreases the amount of violations, it shuffles
+    the ordering and starts again.
+
+    Input:
+        wizards: Number of constraint violations to beat
+        constraints: Constraints from inputfile
+        event: Multithreading event, when one core finds
+               A solution and event.set() is called, they
+               all stop and move on to the next input
+        best_so_far_file: name of the file containing the
+                          best ordering found so far
+    Output:
+        wizards: A valid ordering of the wizards
+    """
     constraint_map = utils.get_constraint_map(constraints)
     violations = utils.check_violations(wizards, constraint_map)
 
@@ -110,25 +114,8 @@ def solve(wizards, constraints, event, best_so_far_file):
     return wizards
 
 
-"""
-Takes the number of wizards and file number
-and creates names of the input, output, and
-best_so_far files. Runs solver on the inputs,
-and writes solution to file.
-
-Input:
-    number: number of wizards, 20, 35, or 50
-    i: file number 0 - 9
-    event: Multithreading event, when one core finds
-           A solution and event.set() is called, they
-           all stop and move on to the next input
-"""
-def run_phase2_inputs(number, i, event):
-    input_file = 'phase2_inputs/inputs' + number + '/input' + number + '_' + str(i) + '.in'
-    output_file = 'phase2_inputs/inputs' + number + '/output' + number + '_' + str(i) + '.out'
-    best_so_far_file = 'phase2_inputs/inputs' + number + '/input' + number + '_' + str(i) + '_best_so_far' + '.in'
-
-    print("\nBeginning " + 'input' + number + '_' + str(i))
+def run_inputs(event, input_file, output_file, best_so_far_file):
+    print("\nBeginning " + input_file)
     num_wizards, num_constraints, wizards, constraints = utils.read_input(input_file)
     solution = solve(wizards, constraints, event, best_so_far_file)
     print("\nFound Solution")
@@ -136,16 +123,7 @@ def run_phase2_inputs(number, i, event):
     utils.write_output(output_file, solution)
 
 
-"""
-Sends an input file task to every cpu
-available. Terminates when any of them
-finish.
-
-Input:
-    number: number of wizards, 20, 35, or 50
-    i: file number 0 - 9
-"""
-def multi_process(number, i):
+def multi_process(input_file, output_file, best_so_far_file):
     cpus_to_use = multiprocessing.cpu_count()
 
     p = multiprocessing.Pool(cpus_to_use)
@@ -153,18 +131,25 @@ def multi_process(number, i):
     event = m.Event()
 
     for _ in range(cpus_to_use):
-        p.apply_async(run_phase2_inputs, (number, i, event))
+        p.apply_async(run_inputs, (event, input_file, output_file, best_so_far_file))
     p.close()
 
     event.wait()
     p.terminate()
 
 
-"""
-Runs the program on the input files.
-e.g. multi_process("20", 0) runs on input20_0.in
-"""
-if __name__ == "__main__":
+def get_phase_2_file_names(num_wizards, file_num):
+    input_file = 'phase2_inputs/inputs' + num_wizards + '/input' + num_wizards + '_' + file_num + '.in'
+    output_file = 'phase2_inputs/inputs' + num_wizards + '/output' + num_wizards + '_' + file_num + '.out'
+    best_so_far_file = 'phase2_inputs/inputs' + num_wizards + '/input' + num_wizards + '_' + file_num + '_best_so_far' + '.in'
+    return input_file, output_file, best_so_far_file
+
+
+def phase_2():
+    """
+    Runs the program on the phase_2 input files.
+    e.g. multi_process("20", 0) runs on input20_0.in
+    """
 
     # Full list of inputs
     # to_do_list_20 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -181,11 +166,53 @@ if __name__ == "__main__":
     to_do_list_35 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
     to_do_list_50 = [1, 2, 3, 4, 5, 6, 7]
 
-    for i in to_do_list_20:
-        multi_process("20", i)
+    for file_num in to_do_list_20:
+        input_file, output_file, best_so_far_file = get_phase_2_file_names("20", str(file_num))
+        multi_process(input_file, output_file, best_so_far_file)
 
-    for i in to_do_list_35:
-        multi_process("35", i)
+    for file_num in to_do_list_35:
+        input_file, output_file, best_so_far_file = get_phase_2_file_names("35", str(file_num))
+        multi_process(input_file, output_file, best_so_far_file)
 
-    for i in to_do_list_50:
-        multi_process("50", i)
+    for number in to_do_list_50:
+        input_file, output_file, best_so_far_file = get_phase_2_file_names("50", str(file_num))
+        multi_process(input_file, output_file, best_so_far_file)
+
+
+def staff_inputs_all_cores_each_input():
+    to_do_list = [60, 80, 100, 120, 140, 180, 200, 220, 240, 260, 280, 300, 320, 340, 360, 380, 400]
+
+    for n in to_do_list:
+        input_file = 'Staff_Inputs/staff_' + str(n) + '.in'
+        output_file = 'Staff_Inputs/staff_' + str(n) + '.out'
+        best_so_far_file = 'Staff_Inputs/staff_' + str(n) + '_best_so_far' + '.in'
+        multi_process(input_file, output_file, best_so_far_file)
+
+
+def run_staff_inputs_one_per_core(n):
+    input_file = 'Staff_Inputs/staff_' + str(n[0]) + '.in'
+    output_file = 'Staff_Inputs/staff_' + str(n[0]) + '.out'
+    best_so_far_file = 'Staff_Inputs/staff_' + str(n[0]) + '_best_so_far' + '.in'
+
+    run_inputs(n[1], input_file, output_file, best_so_far_file)
+    return ("Finished")
+
+
+def staff_inputs_one_per_core():
+    to_do_list = [60, 80, 100, 120, 140, 180, 200, 220, 240, 260, 280, 300, 320, 340, 360, 380, 400]
+    m = multiprocessing.Manager()
+    event = m.Event()
+    inputs = [(x, event) for x in to_do_list]
+
+    number_processes = multiprocessing.cpu_count()
+
+    with Pool(number_processes) as p:
+        reslist = [p.apply_async(run_staff_inputs_one_per_core, (n,)) for n in inputs]
+        for result in reslist:
+            print(result.get())
+
+
+if __name__ == "__main__":
+    # phase_2()
+    # staff_inputs_all_cores_each_input()
+    staff_inputs_one_per_core()
