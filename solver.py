@@ -58,7 +58,7 @@ def check_best_violations(violations, wizards, best_so_far_file):
             best_violations = int(f.readline().split()[0])
             if violations < best_violations:
                 best_list = [str(violations)] + wizards
-                print("Best violations updated: " + violations + " " + best_so_far_file)
+                print("Best violations updated: " + str(violations) + " " + best_so_far_file)
                 utils.write_output(best_so_far_file, best_list)
     except:
         best_list = [str(violations)] + wizards
