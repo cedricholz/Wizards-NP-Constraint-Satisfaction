@@ -88,7 +88,9 @@ def solve(wizards, constraints, event, best_so_far_file):
     constraint_map = utils.get_constraint_map(constraints)
     violations = utils.check_violations(wizards, constraint_map)
 
-    sorted_wizards = utils.sort_wizards(wizards, constraint_map)
+    #constraint_ordering = utils.sort_wizards(wizards, constraint_map)
+    constraint_ordering = wizards[:]
+    random.shuffle(constraint_ordering)
 
     sequence = [violations]
     best_found = sys.maxsize
@@ -96,7 +98,7 @@ def solve(wizards, constraints, event, best_so_far_file):
 
         starting_violations = violations
 
-        for wizard in sorted_wizards:
+        for wizard in constraint_ordering:
             violations, wizards = place_in_best_location(violations, wizard, wizards, constraint_map)
 
             check_best_violations(violations, wizards, best_so_far_file)
@@ -104,7 +106,7 @@ def solve(wizards, constraints, event, best_so_far_file):
             sequence.append(violations)
         if starting_violations == violations:
             random.shuffle(wizards)
-            # random.shuffle(sorted_wizards)
+            random.shuffle(constraint_ordering)
 
             # print("Sequence: " + str(sequence))
             # print("Stuck at " + str(violations) + " violations")
@@ -216,5 +218,5 @@ def staff_inputs_one_per_core():
 
 if __name__ == "__main__":
     # phase_2()
-    # staff_inputs_all_cores_each_input()
-    staff_inputs_one_per_core()
+    staff_inputs_all_cores_each_input()
+    # staff_inputs_one_per_core()
