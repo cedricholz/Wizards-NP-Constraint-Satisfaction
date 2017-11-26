@@ -161,14 +161,14 @@ def phase_2():
     # to_do_list_50 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
     # Unable to solve
-    # to_do_list_20 = [3]
-    # to_do_list_35 = []
-    # to_do_list_50 = [0, 8, 9]
+    to_do_list_20 = [3]
+    to_do_list_35 = []
+    to_do_list_50 = [0, 8, 9]
 
     # Solvable
-    to_do_list_20 = [0, 1, 2, 4, 5, 6, 7, 8, 9]
-    to_do_list_35 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-    to_do_list_50 = [1, 2, 3, 4, 5, 6, 7]
+    # to_do_list_20 = [0, 1, 2, 4, 5, 6, 7, 8, 9]
+    # to_do_list_35 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    # to_do_list_50 = [1, 2, 3, 4, 5, 6, 7]
 
     for file_num in to_do_list_20:
         input_file, output_file, best_so_far_file = get_phase_2_file_names("20", str(file_num))
@@ -217,6 +217,6 @@ def staff_inputs_one_per_core():
 
 
 if __name__ == "__main__":
-    # phase_2()
-    staff_inputs_all_cores_each_input()
+    phase_2()
+    # staff_inputs_all_cores_each_input()
     # staff_inputs_one_per_core()
