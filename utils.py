@@ -2,7 +2,6 @@
 utils.py
 """
 
-
 """
 Sorts the wizards based on their
 number of constraints
@@ -14,23 +13,25 @@ Input:
 Output:
     sorted_list_of_wizards: the sorted list of wizards
 """
-def sort_wizards(ws, cm):
-    wizards = list(ws)
-    constraint_map = dict(cm)
-    sorted_list_of_wizards = []
-    while len(constraint_map) > 0:
-        m = 0
-        name = ''
-        for i in constraint_map:
-            if len(constraint_map[i]) > m:
-                m = len(constraint_map[i])
-                name = i
-                sorted_list_of_wizards.append(name)
-        wizards.remove(name)
-        del constraint_map[name]
-    sorted_list_of_wizards += wizards
 
-    return sorted_list_of_wizards
+
+def sort_wizards(ws, cm):
+    wizards = set(ws)
+    constraint_map = dict(cm)
+    contraint_tups = []
+
+    for i in constraint_map:
+        contraint_tups.append((i, len(constraint_map[i])))
+        wizards.remove(i)
+    for i in wizards:
+        contraint_tups.append((i, 0))
+
+    contraint_tups.sort(key=lambda tup: tup[1], reverse = True)
+
+    sorted_wizards = []
+    for i in contraint_tups:
+        sorted_wizards.append(i[0])
+    return sorted_wizards
 
 
 """
@@ -42,6 +43,8 @@ Input:
 Output:
     constraint_map: Wizard names mapped to a list of their constraits
 """
+
+
 def get_constraint_map(constraints):
     constraint_map = {}
     for constraint in constraints:
@@ -64,6 +67,8 @@ Input:
 Output:
     violations: Number of violations
 """
+
+
 def check_violations(ordered_wizards, constraint_map):
     violations = 0
     prev_wizards = set(ordered_wizards[:1])

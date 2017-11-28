@@ -2,45 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e486751f-49f9-4253-8ffe-fc7f2a3f1c49" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Alexs/input20.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Alexs/input30.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Alexs/input50.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Alexs/output20.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Alexs/output30.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Alexs/output50.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Armans/input20.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Armans/input35.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Armans/input50.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Armans/output20.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Armans/output35.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Armans/output50.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/BryceandGeorgys/input20.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/BryceandGeorgys/input35.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/BryceandGeorgys/input50.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/BryceandGeorgys/output20.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/BryceandGeorgys/output35.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/BryceandGeorgys/output50.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keerthis/input20.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keerthis/input35.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keerthis/output20.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Keerthis/output35.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Nizans/input20.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Nizans/input35.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Nizans/input50.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Nizans/output20.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Nizans/output35.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Nizans/output50.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Ours/input20.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Ours/input35.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Ours/input50.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Ours/inputsample.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Ours/output20.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Ours/output35.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Ours/output50.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Ours/outputsample.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/outputs.zip" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/backtrack_solver.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Staff_Inputs/staff_60_best_so_far.in" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/graveyard.py" afterPath="$PROJECT_DIR$/graveyard.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/solver.py" afterPath="$PROJECT_DIR$/solver.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils.py" afterPath="$PROJECT_DIR$/utils.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -51,7 +18,8 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/wizards_np$output_validator.coverage" NAME="output_validator Coverage Results" MODIFIED="1510870059285" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/wizards_np$solver.coverage" NAME="solver Coverage Results" MODIFIED="1511769326565" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/wizards_np$solver.coverage" NAME="solver Coverage Results" MODIFIED="1511851209719" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/wizards_np$backtrack_solver.coverage" NAME="backtrack_solver Coverage Results" MODIFIED="1511854171596" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="ExportToHTMLSettings">
     <option name="printScope" value="1" />
@@ -59,11 +27,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="solver.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="solver.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/solver.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="205" column="4" lean-forward="true" selection-start-line="205" selection-start-column="4" selection-end-line="205" selection-end-column="4" />
+            <state relative-caret-position="-245">
+              <caret line="173" column="18" lean-forward="false" selection-start-line="173" selection-start-column="8" selection-end-line="173" selection-end-column="18" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="backtrack_solver.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/backtrack_solver.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="352">
+              <caret line="78" column="0" lean-forward="false" selection-start-line="78" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -74,8 +54,8 @@
       <file leaf-file-name="utils.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2222">
-              <caret line="101" column="0" lean-forward="false" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
+            <state relative-caret-position="352">
+              <caret line="26" column="37" lean-forward="false" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -94,8 +74,8 @@
       <file leaf-file-name="graveyard.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/graveyard.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="18" column="18" lean-forward="false" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+            <state relative-caret-position="88">
+              <caret line="286" column="25" lean-forward="false" selection-start-line="286" selection-start-column="25" selection-end-line="286" selection-end-column="25" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -114,7 +94,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>['Jeni', 'Joyann', 'Nelia', 'Athene', 'Shanon', 'Rosemarie', 'Timmie', 'Audie', 'Laurena', 'Fiona', 'Roxie', 'Alberta', 'Ileane', 'Sybyl', 'Madge', 'Winnie', 'Cherish', 'Frannie', 'Sonni', 'Olympie', 'Cristin', 'Betteann', 'Pansy', 'Kaia', 'Stephani', 'Katina', 'Celisse', 'Lyndsey', 'Marieann', 'Zondra', 'Cyndy', 'Colly', 'Gayleen', 'Walliw', 'Kayley']</find>
       <find>Olympie', 'Sonni</find>
       <find>best_vio</find>
       <find>2 violations</find>
@@ -134,6 +113,17 @@
       <find>check_best_vi</find>
       <find>check_best_violations</find>
       <find>sorted_wizards</find>
+      <find>backtracking</find>
+      <find>check_violat</find>
+      <find>violates</find>
+      <find>next_wizards.rem</find>
+      <find>check_violates</find>
+      <find>get_phase</find>
+      <find>check_vio</find>
+      <find>input</find>
+      <find>input_file</find>
+      <find>print</find>
+      <find>sort</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -142,6 +132,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/solver.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/backtrack_solver.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/utils.py" root0="SKIP_INSPECTION" />
   </component>
   <component name="IdeDocumentHistory">
@@ -151,9 +142,10 @@
         <option value="$PROJECT_DIR$/test_area.py" />
         <option value="$PROJECT_DIR$/multicore_one_at_a_time_solver.py" />
         <option value="$PROJECT_DIR$/output_validator.py" />
+        <option value="$PROJECT_DIR$/solver.py" />
         <option value="$PROJECT_DIR$/graveyard.py" />
         <option value="$PROJECT_DIR$/utils.py" />
-        <option value="$PROJECT_DIR$/solver.py" />
+        <option value="$PROJECT_DIR$/backtrack_solver.py" />
       </list>
     </option>
   </component>
@@ -164,7 +156,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-1929" />
+    <option name="x" value="-9" />
     <option name="y" value="-9" />
     <option name="width" value="1938" />
     <option name="height" value="1048" />
@@ -184,6 +176,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -195,7 +188,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -218,7 +210,25 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.solver">
+  <component name="RunManager" selected="Python.backtrack_solver">
+    <configuration name="backtrack_solver" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="wizards-np" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/backtrack_solver.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
     <configuration name="output_validator" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -255,14 +265,16 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <list size="2">
+    <list size="3">
       <item index="0" class="java.lang.String" itemvalue="Python.solver" />
       <item index="1" class="java.lang.String" itemvalue="Python.output_validator" />
+      <item index="2" class="java.lang.String" itemvalue="Python.backtrack_solver" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Python.solver" />
-        <item index="1" class="java.lang.String" itemvalue="Python.output_validator" />
+      <list size="3">
+        <item index="0" class="java.lang.String" itemvalue="Python.backtrack_solver" />
+        <item index="1" class="java.lang.String" itemvalue="Python.solver" />
+        <item index="2" class="java.lang.String" itemvalue="Python.output_validator" />
       </list>
     </recent_temporary>
   </component>
@@ -459,11 +471,18 @@
       <option name="project" value="LOCAL" />
       <updated>1511730748600</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="settings for cloud">
+      <created>1511769352160</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1511769352160</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1929" y="-9" width="1938" height="1048" extended-state="6" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12708333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -472,11 +491,11 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19205298" sideWeight="0.7395833" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.102649" sideWeight="0.7395833" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36644593" sideWeight="0.8286458" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2737307" sideWeight="0.8286458" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -553,21 +572,11 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="103" />
+      <option name="time" value="111" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/graveyard.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1660">
-          <caret line="83" column="32" lean-forward="false" selection-start-line="83" selection-start-column="32" selection-end-line="83" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/solver.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -940,8 +949,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/graveyard.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="18" column="18" lean-forward="false" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+        <state relative-caret-position="88">
+          <caret line="286" column="25" lean-forward="false" selection-start-line="286" selection-start-column="25" selection-end-line="286" selection-end-column="25" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
@@ -956,18 +965,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/solver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-245">
+          <caret line="173" column="18" lean-forward="false" selection-start-line="173" selection-start-column="8" selection-end-line="173" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2222">
-          <caret line="101" column="0" lean-forward="false" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
+        <state relative-caret-position="352">
+          <caret line="26" column="37" lean-forward="false" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/solver.py">
+    <entry file="file://$PROJECT_DIR$/backtrack_solver.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="205" column="4" lean-forward="true" selection-start-line="205" selection-start-column="4" selection-end-line="205" selection-end-column="4" />
+        <state relative-caret-position="352">
+          <caret line="78" column="0" lean-forward="false" selection-start-line="78" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>

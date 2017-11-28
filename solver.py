@@ -203,7 +203,7 @@ def run_staff_inputs_one_per_core(n):
 
 
 def staff_inputs_one_per_core():
-    to_do_list = [260, 280, 300, 320, 340, 360, 380, 400]
+    to_do_list = [60, 80, 100, 120, 140, 160, 180, 200, 220, 240, 260, 280, 300, 320, 340, 360, 380, 400]
     m = multiprocessing.Manager()
     event = m.Event()
     inputs = [(x, event) for x in to_do_list]

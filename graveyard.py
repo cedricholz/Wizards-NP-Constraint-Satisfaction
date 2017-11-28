@@ -282,3 +282,22 @@ if __name__ == "__main__":
     num_wizards, num_constraints, wizards, constraints = utils.read_input(args.input_file)
     solution = solve(num_wizards, num_constraints, wizards, constraints)
     utils.write_output(args.output_file, solution)
+
+
+def sort_wizards_traaaash(ws, cm):
+    wizards = list(ws)
+    constraint_map = dict(cm)
+    sorted_list_of_wizards = []
+    while len(constraint_map) > 0:
+        m = 0
+        name = ''
+        for i in constraint_map:
+            if len(constraint_map[i]) > m:
+                m = len(constraint_map[i])
+                name = i
+                sorted_list_of_wizards.append(name)
+        wizards.remove(name)
+        del constraint_map[name]
+    sorted_list_of_wizards += wizards
+
+    return sorted_list_of_wizards
