@@ -3,23 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="e486751f-49f9-4253-8ffe-fc7f2a3f1c49" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/graveyard.py" afterPath="$PROJECT_DIR$/graveyard.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/outputs/output20_3.out" afterPath="$PROJECT_DIR$/outputs/output20_3.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Staff_Inputs/staff_60.out" afterPath="$PROJECT_DIR$/Staff_Inputs/staff_60.out" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/phase2_inputs/inputs20/output20_0.out" afterPath="$PROJECT_DIR$/phase2_inputs/inputs20/output20_0.out" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/phase2_inputs/inputs20/output20_1.out" afterPath="$PROJECT_DIR$/phase2_inputs/inputs20/output20_1.out" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/phase2_inputs/inputs20/output20_2.out" afterPath="$PROJECT_DIR$/phase2_inputs/inputs20/output20_2.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/phase2_inputs/inputs20/output20_3.out" afterPath="$PROJECT_DIR$/phase2_inputs/inputs20/output20_3.out" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/phase2_inputs/inputs20/output20_4.out" afterPath="$PROJECT_DIR$/phase2_inputs/inputs20/output20_4.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/phase2_inputs/inputs20/output20_5.out" afterPath="$PROJECT_DIR$/phase2_inputs/inputs20/output20_5.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/phase2_inputs/inputs20/output20_8.out" afterPath="$PROJECT_DIR$/phase2_inputs/inputs20/output20_8.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/phase2_inputs/inputs20/output20_6.out" afterPath="$PROJECT_DIR$/phase2_inputs/inputs20/output20_6.out" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/phase2_inputs/inputs20/output20_9.out" afterPath="$PROJECT_DIR$/phase2_inputs/inputs20/output20_9.out" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/phase2_inputs/inputs35/output35_0.out" afterPath="$PROJECT_DIR$/phase2_inputs/inputs35/output35_0.out" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/phase2_inputs/inputs35/output35_1.out" afterPath="$PROJECT_DIR$/phase2_inputs/inputs35/output35_1.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/phase2_inputs/inputs35/output35_2.out" afterPath="$PROJECT_DIR$/phase2_inputs/inputs35/output35_2.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/phase2_inputs/inputs35/output35_3.out" afterPath="$PROJECT_DIR$/phase2_inputs/inputs35/output35_3.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/phase2_inputs/inputs35/output35_4.out" afterPath="$PROJECT_DIR$/phase2_inputs/inputs35/output35_4.out" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/solver.py" afterPath="$PROJECT_DIR$/solver.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils.py" afterPath="$PROJECT_DIR$/utils.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -30,7 +23,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/wizards_np$output_validator.coverage" NAME="output_validator Coverage Results" MODIFIED="1510870059285" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/wizards_np$solver.coverage" NAME="solver Coverage Results" MODIFIED="1511931045767" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/wizards_np$solver.coverage" NAME="solver Coverage Results" MODIFIED="1511933199791" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/wizards_np$backtrack_solver.coverage" NAME="backtrack_solver Coverage Results" MODIFIED="1511854880346" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="ExportToHTMLSettings">
@@ -42,8 +35,8 @@
       <file leaf-file-name="solver.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/solver.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="194" column="16" lean-forward="true" selection-start-line="194" selection-start-column="16" selection-end-line="194" selection-end-column="16" />
+            <state relative-caret-position="393">
+              <caret line="219" column="5" lean-forward="false" selection-start-line="219" selection-start-column="5" selection-end-line="219" selection-end-column="5" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -488,7 +481,14 @@
       <option name="project" value="LOCAL" />
       <updated>1511854354333</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="settings for cloud">
+      <created>1511931064722</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1511931064722</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -499,7 +499,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34878588" sideWeight="0.26041666" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21854305" sideWeight="0.7395833" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28807947" sideWeight="0.7395833" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12708333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -569,9 +569,9 @@
     <MESSAGE value="updated error when best violations updated wasn't printing" />
     <MESSAGE value="no longer shuffles sorted wizards" />
     <MESSAGE value="shuffles constraint_ordering" />
-    <MESSAGE value="settings for cloud" />
     <MESSAGE value="added backtrack solver" />
-    <option name="LAST_COMMIT_MESSAGE" value="added backtrack solver" />
+    <MESSAGE value="settings for cloud" />
+    <option name="LAST_COMMIT_MESSAGE" value="settings for cloud" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1017,8 +1017,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/solver.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="194" column="16" lean-forward="true" selection-start-line="194" selection-start-column="16" selection-end-line="194" selection-end-column="16" />
+        <state relative-caret-position="393">
+          <caret line="219" column="5" lean-forward="false" selection-start-line="219" selection-start-column="5" selection-end-line="219" selection-end-column="5" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>

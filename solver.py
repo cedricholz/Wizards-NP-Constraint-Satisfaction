@@ -48,7 +48,7 @@ def place_in_random_location(wizard, wizards, constraint_map):
     return violations, wizards
 
 
-def solve(wizards, constraints, event, best_so_far_file, i):
+def solve(wizards, constraints, event, best_so_far_file):
     """
     Takes an ordering of wizards, and one by one
     (most constrained first) places them in the location
@@ -82,7 +82,7 @@ def solve(wizards, constraints, event, best_so_far_file, i):
 
         # Choose a random wizard or the most constrained wizard
         random_or_most_constrained_val = random.randrange(0, 100)
-        if random_or_most_constrained_val < i:
+        if random_or_most_constrained_val < 55:
             wizard = random.choice(constraint_ordering)
         else:
             constraint_ordering = utils.sort_wizards(wizards, constraint_map)
@@ -107,6 +107,7 @@ def solve(wizards, constraints, event, best_so_far_file, i):
                 wizard = random.choice(constraint_ordering)
                 violations, wizards = place_in_random_location(wizard, wizards, constraint_map)
         else:
+            #print(violations)
             count = 0
 
     event.set()
@@ -114,25 +115,24 @@ def solve(wizards, constraints, event, best_so_far_file, i):
     return wizards
 
 
-def run_inputs(event, input_file, output_file, best_so_far_file, i):
+def run_inputs(event, input_file, output_file, best_so_far_file):
     print("\nBeginning " + input_file)
     num_wizards, num_constraints, wizards, constraints = utils.read_input(input_file)
-    solution = solve(wizards, constraints, event, best_so_far_file, i)
+    solution = solve(wizards, constraints, event, best_so_far_file)
     print("\nFound Solution")
     print(solution)
     utils.write_output(output_file, solution)
 
 
-def multi_process(input_file, output_file, best_so_far_file, i):
+def multi_process(input_file, output_file, best_so_far_file):
     cpus_to_use = multiprocessing.cpu_count()
-    cpus_to_use = 1
 
     p = multiprocessing.Pool(cpus_to_use)
     m = multiprocessing.Manager()
     event = m.Event()
 
     for _ in range(cpus_to_use):
-        p.apply_async(run_inputs, (event, input_file, output_file, best_so_far_file, i))
+        p.apply_async(run_inputs, (event, input_file, output_file, best_so_far_file))
     p.close()
 
     event.wait()
@@ -167,36 +167,22 @@ def phase_2():
     to_do_list_35 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
     to_do_list_50 = [1, 2, 3, 4, 5, 6, 7]
 
-    # for file_num in to_do_list_20:
-    #     input_file, output_file, best_so_far_file = get_phase_2_file_names("20", str(file_num))
-    #     multi_process(input_file, output_file, best_so_far_file)
-    #
-    # for file_num in to_do_list_35:
-    #     input_file, output_file, best_so_far_file = get_phase_2_file_names("35", str(file_num))
-    #     multi_process(input_file, output_file, best_so_far_file)
-    #
-    # for file_num in to_do_list_50:
-    #     input_file, output_file, best_so_far_file = get_phase_2_file_names("50", str(file_num))
-    #     multi_process(input_file, output_file, best_so_far_file)
+    for file_num in to_do_list_20:
+        input_file, output_file, best_so_far_file = get_phase_2_file_names("20", str(file_num))
+        multi_process(input_file, output_file, best_so_far_file)
 
-    import time
+    for file_num in to_do_list_35:
+        input_file, output_file, best_so_far_file = get_phase_2_file_names("35", str(file_num))
+        multi_process(input_file, output_file, best_so_far_file)
 
-    times = []
-    to_do_list_20 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    for file_num in to_do_list_50:
+        input_file, output_file, best_so_far_file = get_phase_2_file_names("50", str(file_num))
+        multi_process(input_file, output_file, best_so_far_file)
 
-    for i in range(10, 80):
-        startTime = time.time()
-        for file_num in to_do_list_20:
-            input_file, output_file, best_so_far_file = get_phase_2_file_names("20", str(file_num))
-            multi_process(input_file, output_file, best_so_far_file, i)
-        times.append((i, time.time() - startTime))
-
-    times.sort(key=lambda tup: tup[1])
-    print(times)
 
 
 def staff_inputs_all_cores_each_input():
-    to_do_list = [60, 80, 100, 120, 140, 160, 180, 200, 220, 240, 260, 280, 300, 320, 340, 360, 380, 400]
+    to_do_list = [80, 100, 120, 140, 160, 180, 200, 220, 240, 260, 280, 300, 320, 340, 360, 380, 400]
 
     for n in to_do_list:
         input_file = 'Staff_Inputs/staff_' + str(n) + '.in'
@@ -215,7 +201,7 @@ def run_staff_inputs_one_per_core(n):
 
 
 def staff_inputs_one_per_core():
-    to_do_list = [60, 80, 100, 120, 140, 160, 180, 200, 220, 240, 260, 280, 300, 320, 340, 360, 380, 400]
+    to_do_list = [100, 120, 140, 160, 180, 200, 220, 240, 260, 280, 300, 320, 340, 360, 380, 400]
     m = multiprocessing.Manager()
     event = m.Event()
     inputs = [(x, event) for x in to_do_list]
@@ -229,6 +215,6 @@ def staff_inputs_one_per_core():
 
 
 if __name__ == "__main__":
-    phase_2()
+    # phase_2()
     # staff_inputs_all_cores_each_input()
-    # staff_inputs_one_per_core()
+    staff_inputs_one_per_core()
