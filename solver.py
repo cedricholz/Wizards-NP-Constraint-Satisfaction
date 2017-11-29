@@ -21,51 +21,34 @@ def place_in_best_location(violations, wizard, wizards, constraint_map):
     Output:
         best_cur_violations: Number of violations after the move
     """
-    best_cur_violations = violations
 
+    best_cur_violations = violations
     best_j = wizards.index(wizard)
     wizards.remove(wizard)
     wizards = [wizard] + wizards
 
     for j in range(len(wizards) - 1):
-        temp_violations = utils.check_violations(wizards, constraint_map)
-        if temp_violations < best_cur_violations:
+        temp_violations = utils.check_total_violations(wizards, constraint_map)
+        if temp_violations <= best_cur_violations:
             best_cur_violations = temp_violations
             best_j = j
         wizards[j], wizards[j + 1] = wizards[j + 1], wizards[j]
     wizards.pop()
     wizards.insert(best_j, wizard)
-
     return best_cur_violations, wizards
 
 
-def check_best_violations(violations, wizards, best_so_far_file):
-    """
-    Checks the current wizard ordering against a file
-    containing the best ordering we've seen so far
-    and the number of constraints it violates. Has to
-    be in a file because the program is running on
-    multiple cores.
+def place_in_random_location(wizard, wizards, constraint_map):
+    random_i = random.randrange(0, len(wizards) - 1)
+    random_j = random.randrange(0, len(wizards) - 1)
 
-    Input:
-        violations: Violations the wizard ordering has
-        wizards: The wizard ordering
-        best_so_far_file: name of the file containing the
-                          best ordering found so far
-    """
-    try:
-        with open(best_so_far_file) as f:
-            best_violations = int(f.readline().split()[0])
-            if violations < best_violations:
-                best_list = [str(violations)] + wizards
-                print("Best violations updated: " + str(violations) + " " + best_so_far_file)
-                utils.write_output(best_so_far_file, best_list)
-    except:
-        best_list = [str(violations)] + wizards
-        utils.write_output(best_so_far_file, best_list)
+    wizards[random_i], wizards[random_j] = wizards[random_j], wizards[random_i]
+    violations = utils.check_total_violations(wizards, constraint_map)
+
+    return violations, wizards
 
 
-def solve(wizards, constraints, event, best_so_far_file):
+def solve(wizards, constraints, event, best_so_far_file, i):
     """
     Takes an ordering of wizards, and one by one
     (most constrained first) places them in the location
@@ -85,57 +68,71 @@ def solve(wizards, constraints, event, best_so_far_file):
     Output:
         wizards: A valid ordering of the wizards
     """
-    constraint_map = utils.get_constraint_map(constraints)
-    violations = utils.check_violations(wizards, constraint_map)
-
-    #constraint_ordering = utils.sort_wizards(wizards, constraint_map)
     constraint_ordering = wizards[:]
-    random.shuffle(constraint_ordering)
+    constraint_map = utils.get_constraint_map(constraints)
 
+    violations = utils.check_total_violations(wizards, constraint_map)
     sequence = [violations]
     best_found = sys.maxsize
+    count = 0
+
     while violations > 0:
 
         starting_violations = violations
 
-        for wizard in constraint_ordering:
-            violations, wizards = place_in_best_location(violations, wizard, wizards, constraint_map)
+        # Choose a random wizard or the most constrained wizard
+        random_or_most_constrained_val = random.randrange(0, 100)
+        if random_or_most_constrained_val < i:
+            wizard = random.choice(constraint_ordering)
+        else:
+            constraint_ordering = utils.sort_wizards(wizards, constraint_map)
+            wizard = constraint_ordering[0]
 
-            check_best_violations(violations, wizards, best_so_far_file)
+        violations, wizards = place_in_best_location(violations, wizard, wizards, constraint_map)
 
-            sequence.append(violations)
+        sequence.append(violations)
+
         if starting_violations == violations:
-            random.shuffle(wizards)
-            random.shuffle(constraint_ordering)
+            count += 1
+            if count >= 500:
+                count = 0
+                random.shuffle(wizards)
+                violations = utils.check_total_violations(wizards, constraint_map)
+                sequence = [violations]
 
-            # print("Sequence: " + str(sequence))
-            # print("Stuck at " + str(violations) + " violations")
-            # print(wizards)
-            violations = utils.check_violations(wizards, constraint_map)
-            sequence = [violations]
+                # print("Sequence: " + str(sequence))
+                # print("Stuck at " + str(violations) + " violations")
+                # print(wizards)
+            elif count >= 100:
+                wizard = random.choice(constraint_ordering)
+                violations, wizards = place_in_random_location(wizard, wizards, constraint_map)
+        else:
+            count = 0
+
     event.set()
     print("\nSolution Sequence" + str(sequence))
     return wizards
 
 
-def run_inputs(event, input_file, output_file, best_so_far_file):
+def run_inputs(event, input_file, output_file, best_so_far_file, i):
     print("\nBeginning " + input_file)
     num_wizards, num_constraints, wizards, constraints = utils.read_input(input_file)
-    solution = solve(wizards, constraints, event, best_so_far_file)
+    solution = solve(wizards, constraints, event, best_so_far_file, i)
     print("\nFound Solution")
     print(solution)
     utils.write_output(output_file, solution)
 
 
-def multi_process(input_file, output_file, best_so_far_file):
+def multi_process(input_file, output_file, best_so_far_file, i):
     cpus_to_use = multiprocessing.cpu_count()
+    cpus_to_use = 1
 
     p = multiprocessing.Pool(cpus_to_use)
     m = multiprocessing.Manager()
     event = m.Event()
 
     for _ in range(cpus_to_use):
-        p.apply_async(run_inputs, (event, input_file, output_file, best_so_far_file))
+        p.apply_async(run_inputs, (event, input_file, output_file, best_so_far_file, i))
     p.close()
 
     event.wait()
@@ -161,26 +158,41 @@ def phase_2():
     # to_do_list_50 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
     # Unable to solve
-    # to_do_list_20 = [3]
-    # to_do_list_35 = []
-    # to_do_list_50 = [0, 8, 9]
+    to_do_list_20 = []
+    to_do_list_35 = []
+    to_do_list_50 = [0, 8, 9]
 
     # Solvable
-    to_do_list_20 = [0, 1, 2, 4, 5, 6, 7, 8, 9]
+    to_do_list_20 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
     to_do_list_35 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
     to_do_list_50 = [1, 2, 3, 4, 5, 6, 7]
 
-    for file_num in to_do_list_20:
-        input_file, output_file, best_so_far_file = get_phase_2_file_names("20", str(file_num))
-        multi_process(input_file, output_file, best_so_far_file)
+    # for file_num in to_do_list_20:
+    #     input_file, output_file, best_so_far_file = get_phase_2_file_names("20", str(file_num))
+    #     multi_process(input_file, output_file, best_so_far_file)
+    #
+    # for file_num in to_do_list_35:
+    #     input_file, output_file, best_so_far_file = get_phase_2_file_names("35", str(file_num))
+    #     multi_process(input_file, output_file, best_so_far_file)
+    #
+    # for file_num in to_do_list_50:
+    #     input_file, output_file, best_so_far_file = get_phase_2_file_names("50", str(file_num))
+    #     multi_process(input_file, output_file, best_so_far_file)
 
-    for file_num in to_do_list_35:
-        input_file, output_file, best_so_far_file = get_phase_2_file_names("35", str(file_num))
-        multi_process(input_file, output_file, best_so_far_file)
+    import time
 
-    for number in to_do_list_50:
-        input_file, output_file, best_so_far_file = get_phase_2_file_names("50", str(file_num))
-        multi_process(input_file, output_file, best_so_far_file)
+    times = []
+    to_do_list_20 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+    for i in range(10, 80):
+        startTime = time.time()
+        for file_num in to_do_list_20:
+            input_file, output_file, best_so_far_file = get_phase_2_file_names("20", str(file_num))
+            multi_process(input_file, output_file, best_so_far_file, i)
+        times.append((i, time.time() - startTime))
+
+    times.sort(key=lambda tup: tup[1])
+    print(times)
 
 
 def staff_inputs_all_cores_each_input():
@@ -217,6 +229,6 @@ def staff_inputs_one_per_core():
 
 
 if __name__ == "__main__":
-    # phase_2()
+    phase_2()
     # staff_inputs_all_cores_each_input()
-    staff_inputs_one_per_core()
+    # staff_inputs_one_per_core()

@@ -3,8 +3,150 @@ import utils
 import random
 
 
-# run_friend_inputs('Alexs', '50')
+def solve(wizards, constraints, event, best_so_far_file):
+    """
+    Takes an ordering of wizards, and one by one
+    (most constrained first) places them in the location
+    that causes the least amount of constraint violations.
+    If it gets stuck at a place where no single move
+    decreases the amount of violations, it shuffles
+    the ordering and starts again.
 
+    Input:
+        wizards: Number of constraint violations to beat
+        constraints: Constraints from inputfile
+        event: Multithreading event, when one core finds
+               A solution and event.set() is called, they
+               all stop and move on to the next input
+        best_so_far_file: name of the file containing the
+                          best ordering found so far
+    Output:
+        wizards: A valid ordering of the wizards
+    """
+    constraint_ordering = wizards[:]
+    constraint_map = utils.get_constraint_map(constraints)
+
+    violations = utils.check_total_violations(wizards, constraint_map)
+    sequence = [violations]
+    best_found = sys.maxsize
+    count = 0
+
+    while violations > 0:
+
+        starting_violations = violations
+
+        # Choose a random wizard or the most constrained wizard
+        random_or_most_constrained_val = random.randrange(0, 100)
+        if random_or_most_constrained_val < 20:
+            wizard = random.choice(constraint_ordering)
+        else:
+            constraint_ordering = utils.sort_wizards(wizards, constraint_map)
+            wizard = constraint_ordering[0]
+
+        # Place chosen wizard a random location, or the best location
+        random_or_best_location_val = random.randrange(0, 100)
+        if random_or_best_location_val < 0:
+            violations, wizards = place_in_random_location(wizard, wizards, constraint_map)
+        else:
+            violations, wizards = place_in_best_location(violations, wizard, wizards, constraint_map)
+
+        # Shuffle or don't
+        # shuffle_or_not = random.randrange(0, 100)
+        # if shuffle_or_not < 10:
+        #     random.shuffle(wizards)
+        #
+        # sequence.append(violations)
+        #
+        # print(violations)
+
+        if starting_violations == violations:
+            count += 1
+            if count >= 10:
+                print(violations)
+                random.shuffle(wizards)
+                violations = utils.check_total_violations(wizards, constraint_map)
+                sequence = [violations]
+                count = 0
+
+                # print("Sequence: " + str(sequence))
+                # print("Stuck at " + str(violations) + " violations")
+                # print(wizards)
+        else:
+            count = 0
+
+    event.set()
+    print("\nSolution Sequence" + str(sequence))
+    return wizards
+
+def sort_wizards(ws, cm):
+    wizards = set(ws)
+    constraint_map = dict(cm)
+    contraint_tups = []
+
+    for i in constraint_map:
+        contraint_tups.append((i, len(constraint_map[i])))
+        wizards.remove(i)
+    for i in wizards:
+        contraint_tups.append((i, 0))
+
+    contraint_tups.sort(key=lambda tup: tup[1], reverse = True)
+
+    sorted_wizards = []
+    for i in contraint_tups:
+        sorted_wizards.append(i[0])
+    return sorted_wizards
+
+# def solve(wizards, constraints, event, best_so_far_file):
+#     """
+#     Takes an ordering of wizards, and one by one
+#     (most constrained first) places them in the location
+#     that causes the least amount of constraint violations.
+#     If it gets stuck at a place where no single move
+#     decreases the amount of violations, it shuffles
+#     the ordering and starts again.
+#
+#     Input:
+#         wizards: Number of constraint violations to beat
+#         constraints: Constraints from inputfile
+#         event: Multithreading event, when one core finds
+#                A solution and event.set() is called, they
+#                all stop and move on to the next input
+#         best_so_far_file: name of the file containing the
+#                           best ordering found so far
+#     Output:
+#         wizards: A valid ordering of the wizards
+#     """
+#     constraint_map = utils.get_constraint_map(constraints)
+#     violations = utils.check_violations(wizards, constraint_map)
+#
+#     #constraint_ordering = utils.sort_wizards(wizards, constraint_map)
+#     constraint_ordering = wizards[:]
+#     random.shuffle(constraint_ordering)
+#
+#     sequence = [violations]
+#     best_found = sys.maxsize
+#     while violations > 0:
+#
+#         starting_violations = violations
+#
+#         for wizard in constraint_ordering:
+#             violations, wizards = place_in_best_location(violations, wizard, wizards, constraint_map)
+#
+#             check_best_violations(violations, wizards, best_so_far_file)
+#
+#             sequence.append(violations)
+#         if starting_violations == violations:
+#             random.shuffle(wizards)
+#             random.shuffle(constraint_ordering)
+#
+#             # print("Sequence: " + str(sequence))
+#             # print("Stuck at " + str(violations) + " violations")
+#             # print(wizards)
+#             violations = utils.check_violations(wizards, constraint_map)
+#             sequence = [violations]
+#     event.set()
+#     print("\nSolution Sequence" + str(sequence))
+#     return wizards
 
 # def run_friend_inputs(folder_name, wizard_number, event):
 #     input_file = folder_name + '/input' + wizard_number + '.in'

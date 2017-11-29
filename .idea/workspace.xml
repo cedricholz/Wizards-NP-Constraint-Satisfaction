@@ -2,10 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e486751f-49f9-4253-8ffe-fc7f2a3f1c49" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/backtrack_solver.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Staff_Inputs/staff_60_best_so_far.in" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/graveyard.py" afterPath="$PROJECT_DIR$/graveyard.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/outputs/output20_3.out" afterPath="$PROJECT_DIR$/outputs/output20_3.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/phase2_inputs/inputs20/output20_0.out" afterPath="$PROJECT_DIR$/phase2_inputs/inputs20/output20_0.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/phase2_inputs/inputs20/output20_1.out" afterPath="$PROJECT_DIR$/phase2_inputs/inputs20/output20_1.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/phase2_inputs/inputs20/output20_2.out" afterPath="$PROJECT_DIR$/phase2_inputs/inputs20/output20_2.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/phase2_inputs/inputs20/output20_3.out" afterPath="$PROJECT_DIR$/phase2_inputs/inputs20/output20_3.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/phase2_inputs/inputs20/output20_4.out" afterPath="$PROJECT_DIR$/phase2_inputs/inputs20/output20_4.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/phase2_inputs/inputs20/output20_5.out" afterPath="$PROJECT_DIR$/phase2_inputs/inputs20/output20_5.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/phase2_inputs/inputs20/output20_8.out" afterPath="$PROJECT_DIR$/phase2_inputs/inputs20/output20_8.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/phase2_inputs/inputs20/output20_9.out" afterPath="$PROJECT_DIR$/phase2_inputs/inputs20/output20_9.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/phase2_inputs/inputs35/output35_0.out" afterPath="$PROJECT_DIR$/phase2_inputs/inputs35/output35_0.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/phase2_inputs/inputs35/output35_1.out" afterPath="$PROJECT_DIR$/phase2_inputs/inputs35/output35_1.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/phase2_inputs/inputs35/output35_2.out" afterPath="$PROJECT_DIR$/phase2_inputs/inputs35/output35_2.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/phase2_inputs/inputs35/output35_3.out" afterPath="$PROJECT_DIR$/phase2_inputs/inputs35/output35_3.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/phase2_inputs/inputs35/output35_4.out" afterPath="$PROJECT_DIR$/phase2_inputs/inputs35/output35_4.out" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/solver.py" afterPath="$PROJECT_DIR$/solver.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils.py" afterPath="$PROJECT_DIR$/utils.py" />
     </list>
@@ -18,8 +30,8 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/wizards_np$output_validator.coverage" NAME="output_validator Coverage Results" MODIFIED="1510870059285" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/wizards_np$solver.coverage" NAME="solver Coverage Results" MODIFIED="1511851209719" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/wizards_np$backtrack_solver.coverage" NAME="backtrack_solver Coverage Results" MODIFIED="1511854171596" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/wizards_np$solver.coverage" NAME="solver Coverage Results" MODIFIED="1511931045767" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/wizards_np$backtrack_solver.coverage" NAME="backtrack_solver Coverage Results" MODIFIED="1511854880346" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="ExportToHTMLSettings">
     <option name="printScope" value="1" />
@@ -27,11 +39,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="solver.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="solver.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/solver.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-245">
-              <caret line="173" column="18" lean-forward="false" selection-start-line="173" selection-start-column="8" selection-end-line="173" selection-end-column="18" />
+            <state relative-caret-position="316">
+              <caret line="194" column="16" lean-forward="true" selection-start-line="194" selection-start-column="16" selection-end-line="194" selection-end-column="16" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -39,14 +51,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="backtrack_solver.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/backtrack_solver.py">
+      <file leaf-file-name="context.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/multiprocessing/context.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="78" column="0" lean-forward="false" selection-start-line="78" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="245">
+              <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -54,19 +64,11 @@
       <file leaf-file-name="utils.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="26" column="37" lean-forward="false" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="output_validator.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/output_validator.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="22" lean-forward="false" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="22" />
-              <folding />
+            <state relative-caret-position="374">
+              <caret line="61" column="4" lean-forward="false" selection-start-line="61" selection-start-column="4" selection-end-line="61" selection-end-column="46" />
+              <folding>
+                <element signature="e#88#1029#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -74,8 +76,8 @@
       <file leaf-file-name="graveyard.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/graveyard.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="286" column="25" lean-forward="false" selection-start-line="286" selection-start-column="25" selection-end-line="286" selection-end-column="25" />
+            <state relative-caret-position="546">
+              <caret line="78" column="18" lean-forward="false" selection-start-line="78" selection-start-column="18" selection-end-line="78" selection-end-column="18" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -94,14 +96,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Olympie', 'Sonni</find>
-      <find>best_vio</find>
-      <find>2 violations</find>
-      <find>best_j</find>
-      <find>['Cassie', 'Mariana', 'Danita', 'Gusella', 'Adelle', 'Rhona', 'Marni', 'Layne', 'Maribeth', 'Jody', 'Kylila', 'Robbi', 'Ynez', 'Helaina', 'Charlene', 'Ammamaria', 'Phoebe', 'Renae', 'Bette', 'Danella']</find>
-      <find>['Cassie', 'Mariana', 'Danita', 'Gusella', 'Adelle', 'Rhona', 'Marni', 'Layne', 'Maribeth', 'Jody', 'Robbi', 'Kylila', 'Ynez', 'Charlene', 'Helaina', 'Ammamaria', 'Phoebe', 'Renae', 'Bette', 'Danella']</find>
-      <find>['Cassie', 'Mariana', 'Danita', 'Gusella', 'Adelle', 'Rhona', 'Marni', 'Layne', 'Maribeth', 'Jody', 'Kylila', 'Charlene', 'Ynez', 'Helaina', 'Robbi', 'Ammamaria', 'Phoebe', 'Renae', 'Bette', 'Danella']</find>
-      <find>['Olympie', 'Rosemarie', 'Celisse', 'Laurena', 'Cristin', 'Nelia', 'Audie', 'Shanon', 'Frannie', 'Zondra', 'Roxie', 'Sybyl', 'Athene', 'Cyndy', 'Ileane', 'Winnie', 'Walliw', 'Gayleen', 'Joyann', 'Madge', 'Sonni', 'Timmie', 'Fiona', 'Lyndsey', 'Pansy', 'Jeni', 'Katina', 'Colly', 'Kaia', 'Cherish', 'Betteann', 'Marieann', 'Stephani', 'Alberta', 'Kayley']</find>
       <find>['Adan', 'Faith', 'Prince', 'Joselyn', 'Logan', 'Gregg', 'Tamara', 'Caroline', 'Amir', 'Debra', 'Emma', 'Rylie', 'Ron', 'Kiera', 'Brayan', 'Angel', 'Aubrey', 'Jonah', 'Marquis', 'Zoey']</find>
       <find>event</find>
       <find>emma</find>
@@ -122,8 +116,16 @@
       <find>check_vio</find>
       <find>input</find>
       <find>input_file</find>
-      <find>print</find>
       <find>sort</find>
+      <find>solve</find>
+      <find>sort_w</find>
+      <find>check_v</find>
+      <find>check_</find>
+      <find>cur)wi</find>
+      <find>check_best</find>
+      <find>cores</find>
+      <find>print</find>
+      <find>multi_process</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -133,6 +135,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/solver.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/backtrack_solver.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/graveyard.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/utils.py" root0="SKIP_INSPECTION" />
   </component>
   <component name="IdeDocumentHistory">
@@ -142,10 +145,10 @@
         <option value="$PROJECT_DIR$/test_area.py" />
         <option value="$PROJECT_DIR$/multicore_one_at_a_time_solver.py" />
         <option value="$PROJECT_DIR$/output_validator.py" />
-        <option value="$PROJECT_DIR$/solver.py" />
+        <option value="$PROJECT_DIR$/backtrack_solver.py" />
         <option value="$PROJECT_DIR$/graveyard.py" />
         <option value="$PROJECT_DIR$/utils.py" />
-        <option value="$PROJECT_DIR$/backtrack_solver.py" />
+        <option value="$PROJECT_DIR$/solver.py" />
       </list>
     </option>
   </component>
@@ -177,6 +180,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -188,7 +192,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -210,7 +213,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.backtrack_solver">
+  <component name="RunManager" selected="Python.solver">
     <configuration name="backtrack_solver" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -272,8 +275,8 @@
     </list>
     <recent_temporary>
       <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="Python.backtrack_solver" />
-        <item index="1" class="java.lang.String" itemvalue="Python.solver" />
+        <item index="0" class="java.lang.String" itemvalue="Python.solver" />
+        <item index="1" class="java.lang.String" itemvalue="Python.backtrack_solver" />
         <item index="2" class="java.lang.String" itemvalue="Python.output_validator" />
       </list>
     </recent_temporary>
@@ -478,24 +481,32 @@
       <option name="project" value="LOCAL" />
       <updated>1511769352160</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="added backtrack solver">
+      <created>1511854354333</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1511854354333</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12708333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34878588" sideWeight="0.26041666" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.102649" sideWeight="0.7395833" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21854305" sideWeight="0.7395833" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12708333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Concurrent Activities Diagram" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289183" sideWeight="0.49791667" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2737307" sideWeight="0.8286458" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.397351" sideWeight="0.8286458" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -504,7 +515,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Concurrent Activities Diagram" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289183" sideWeight="0.49791667" order="11" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -536,7 +546,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Cleaned up, made better run function, organized other student's inputs" />
     <MESSAGE value="moved function to utils" />
     <MESSAGE value="utils." />
     <MESSAGE value="tried several new methods, updated utils" />
@@ -561,7 +570,8 @@
     <MESSAGE value="no longer shuffles sorted wizards" />
     <MESSAGE value="shuffles constraint_ordering" />
     <MESSAGE value="settings for cloud" />
-    <option name="LAST_COMMIT_MESSAGE" value="settings for cloud" />
+    <MESSAGE value="added backtrack solver" />
+    <option name="LAST_COMMIT_MESSAGE" value="added backtrack solver" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -572,26 +582,18 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="111" />
+      <option name="time" value="137" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/solver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/utils.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="40">
           <caret line="2" column="3" lean-forward="false" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
-          <folding />
+          <folding>
+            <element signature="e#88#1029#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -627,7 +629,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="40">
           <caret line="2" column="3" lean-forward="false" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
-          <folding />
+          <folding>
+            <element signature="e#88#1029#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -664,7 +668,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1880">
           <caret line="94" column="0" lean-forward="false" selection-start-line="94" selection-start-column="0" selection-end-line="97" selection-end-column="42" />
-          <folding />
+          <folding>
+            <element signature="e#88#1029#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -706,7 +712,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1420">
           <caret line="71" column="9" lean-forward="false" selection-start-line="71" selection-start-column="9" selection-end-line="71" selection-end-column="9" />
-          <folding />
+          <folding>
+            <element signature="e#88#1029#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -741,7 +749,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1420">
           <caret line="71" column="9" lean-forward="true" selection-start-line="71" selection-start-column="9" selection-end-line="71" selection-end-column="9" />
-          <folding />
+          <folding>
+            <element signature="e#88#1029#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -769,7 +779,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
           <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#88#1029#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -797,7 +809,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
           <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#88#1029#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -835,7 +849,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
           <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#88#1029#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -863,7 +879,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="950">
           <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#88#1029#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -881,7 +899,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1175">
           <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#88#1029#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -917,13 +937,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/codecs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="308" column="0" lean-forward="false" selection-start-line="308" selection-start-column="0" selection-end-line="308" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/runpy.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="213">
@@ -940,53 +953,72 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/multicore_one_at_a_time_solver.py" />
     <entry file="file://$PROJECT_DIR$/exportToHTML/solver.py.html" />
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/multiprocessing/pool.py">
+    <entry file="file://$PROJECT_DIR$/backtrack_solver.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="320" column="0" lean-forward="false" selection-start-line="320" selection-start-column="0" selection-end-line="320" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/graveyard.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="286" column="25" lean-forward="false" selection-start-line="286" selection-start-column="25" selection-end-line="286" selection-end-column="25" />
+        <state relative-caret-position="804">
+          <caret line="88" column="30" lean-forward="false" selection-start-line="88" selection-start-column="30" selection-end-line="88" selection-end-column="30" />
           <folding>
-            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#0#13#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/output_validator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="22" lean-forward="false" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="22" />
+        <state relative-caret-position="242">
+          <caret line="11" column="45" lean-forward="false" selection-start-line="11" selection-start-column="45" selection-end-line="11" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/solver.py">
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/codecs.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-245">
-          <caret line="173" column="18" lean-forward="false" selection-start-line="173" selection-start-column="8" selection-end-line="173" selection-end-column="18" />
+        <state relative-caret-position="527">
+          <caret line="308" column="0" lean-forward="false" selection-start-line="308" selection-start-column="0" selection-end-line="308" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/multiprocessing/pool.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="118" column="0" lean-forward="false" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graveyard.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="78" column="18" lean-forward="false" selection-start-line="78" selection-start-column="18" selection-end-line="78" selection-end-column="18" />
           <folding>
-            <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="26" column="37" lean-forward="false" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
+        <state relative-caret-position="374">
+          <caret line="61" column="4" lean-forward="false" selection-start-line="61" selection-start-column="4" selection-end-line="61" selection-end-column="46" />
+          <folding>
+            <element signature="e#88#1029#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/multiprocessing/context.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backtrack_solver.py">
+    <entry file="file://$PROJECT_DIR$/solver.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="78" column="0" lean-forward="false" selection-start-line="78" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+        <state relative-caret-position="316">
+          <caret line="194" column="16" lean-forward="true" selection-start-line="194" selection-start-column="16" selection-end-line="194" selection-end-column="16" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
