@@ -141,8 +141,7 @@ def phase_2():
         multi_process(input_file, output_file, best_so_far_file)
 
 
-def staff_inputs_all_cores_each_input():
-    to_do_list = [220, 240, 260, 280, 300, 320, 340, 360, 380, 400]
+def staff_inputs_all_cores_each_input(to_do_list):
 
     for n in to_do_list:
         input_file = 'Staff_Inputs/staff_' + str(n) + '.in'
@@ -160,8 +159,7 @@ def run_staff_inputs_one_per_core(n):
     return ("Finished")
 
 
-def staff_inputs_one_per_core():
-    to_do_list = [260, 280, 300, 320, 340, 360, 380, 400]
+def staff_inputs_one_per_core(to_do_list):
     m = multiprocessing.Manager()
     event = m.Event()
     inputs = [(x, event) for x in to_do_list]
@@ -203,7 +201,9 @@ def student_inputs():
 
 
 if __name__ == "__main__":
+
     # phase_2()
-    staff_inputs_all_cores_each_input()
-    # staff_inputs_one_per_core()
+    to_do_list = [140, 160, 180, 200, 220, 240, 260, 280, 300, 320, 340, 360, 380, 400]
+    staff_inputs_all_cores_each_input(to_do_list)
+    # staff_inputs_one_per_core(to_do_list)
     # student_inputs()
