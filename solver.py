@@ -92,11 +92,7 @@ def solve(wizards, constraints, event, best_so_far_file):
             constraint_ordering = utils.sort_wizards(wizards, constraint_map)
             wizard = constraint_ordering[0]
 
-        # Put in
-        random_or_best_location = random.randrange(0, 100)
-
         violations, wizards = place_in_best_location(violations, wizard, wizards, constraint_map)
-
 
         if starting_violations == violations and violations:
             count += 1
