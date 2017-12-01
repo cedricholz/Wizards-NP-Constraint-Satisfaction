@@ -75,11 +75,8 @@ def solve(wizards, constraints, event, best_so_far_file):
 
     violations = utils.check_total_violations(wizards, constraint_map)
 
-    best_found = sys.maxsize
     count = 0
 
-
-    start_time = time.time()
     while violations > 0:
 
         starting_violations = violations
@@ -94,7 +91,7 @@ def solve(wizards, constraints, event, best_so_far_file):
 
         violations, wizards = place_in_best_location(violations, wizard, wizards, constraint_map)
 
-        if starting_violations == violations and violations:
+        if starting_violations == violations:
             count += 1
             if count >= 500:
                 count = 0
@@ -109,8 +106,6 @@ def solve(wizards, constraints, event, best_so_far_file):
         else:
             utils.check_best_violations(violations, wizards, best_so_far_file)
             count = 0
-        if time.time() - start_time > 180:
-            event.set()
 
     event.set()
     return wizards
@@ -237,8 +232,8 @@ def student_inputs():
 
 if __name__ == "__main__":
 
-    phase_2()
+    # phase_2()
     to_do_list = [140, 160, 180, 200, 220, 240, 260, 280, 300, 320, 340, 360, 380, 400]
-    # staff_inputs_all_cores_each_input(to_do_list)
+    staff_inputs_all_cores_each_input(to_do_list)
     # staff_inputs_one_per_core(to_do_list)
     # student_inputs()
