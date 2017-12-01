@@ -3,6 +3,37 @@ import utils
 import random
 
 
+def solve(wizards, constraints, event, best_so_far_file):
+    constraint_ordering = wizards[:]
+
+    constraint_map = utils.get_constraint_map(constraints)
+
+    violations = utils.check_total_violations(wizards, constraint_map)
+
+    best_found = sys.maxsize
+
+    count = 2
+
+    while violations > 0:
+        starting_violations = violations
+
+        wizard = random.choice(wizards)
+
+        potential_violations, potential_wizards = place_in_best_location(violations, wizard, wizards, constraint_map)
+
+        diff = violations - potential_violations
+
+        if diff > 0:
+            wizards = potential_wizards
+            violations = potential_violations
+        else:
+            p = math.exp(diff / math.log10(count))
+            (wizards, violations) = random.choices([(wizards, violations), (potential_wizards, potential_violations)], [p, 1-p])[0]
+        count += 1
+
+    event.set()
+    return wizards
+
 
 def solve(wizards, constraints, event, best_so_far_file):
     """
