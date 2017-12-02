@@ -1,44 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e486751f-49f9-4253-8ffe-fc7f2a3f1c49" name="Default" comment="put old version back in">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Staff_Inputs/staff_140.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Staff_Inputs/staff_140_best_so_far.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Staff_Inputs/staff_160.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Staff_Inputs/staff_160_best_so_far.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Staff_Inputs/staff_180.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Staff_Inputs/staff_180_best_so_far.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Staff_Inputs/staff_200.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Staff_Inputs/staff_200_best_so_far.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Staff_Inputs/staff_220.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Staff_Inputs/staff_220_best_so_far.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Staff_Inputs/staff_240.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Staff_Inputs/staff_240_best_so_far.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Staff_Inputs/staff_260.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Staff_Inputs/staff_260_best_so_far.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Staff_Inputs/staff_280.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Staff_Inputs/staff_280_best_so_far.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Staff_Inputs/staff_300.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Staff_Inputs/staff_300_best_so_far.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Staff_Inputs/staff_320.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Staff_Inputs/staff_320_best_so_far.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Staff_Inputs/staff_340.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Staff_Inputs/staff_340_best_so_far.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Staff_Inputs/staff_360.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Staff_Inputs/staff_360_best_so_far.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Staff_Inputs/staff_380.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Staff_Inputs/staff_380_best_so_far.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Staff_Inputs/staff_400.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Staff_Inputs/staff_400_best_so_far.in" afterPath="" />
+    <list default="true" id="e486751f-49f9-4253-8ffe-fc7f2a3f1c49" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/outputs.zip" afterPath="$PROJECT_DIR$/outputs.zip" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/phase2_inputs/inputs20/output20_0.out" afterPath="$PROJECT_DIR$/phase2_inputs/inputs20/output20_0.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/phase2_inputs/inputs20/output20_1.out" afterPath="$PROJECT_DIR$/phase2_inputs/inputs20/output20_1.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/phase2_inputs/inputs20/output20_2.out" afterPath="$PROJECT_DIR$/phase2_inputs/inputs20/output20_2.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/phase2_inputs/inputs20/output20_5.out" afterPath="$PROJECT_DIR$/phase2_inputs/inputs20/output20_5.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/phase2_inputs/inputs20/output20_6.out" afterPath="$PROJECT_DIR$/phase2_inputs/inputs20/output20_6.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/phase2_inputs/inputs20/output20_7.out" afterPath="$PROJECT_DIR$/phase2_inputs/inputs20/output20_7.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/phase2_inputs/inputs20/output20_8.out" afterPath="$PROJECT_DIR$/phase2_inputs/inputs20/output20_8.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/phase2_inputs/inputs20/output20_9.out" afterPath="$PROJECT_DIR$/phase2_inputs/inputs20/output20_9.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/outputs/staff_140.out" afterPath="$PROJECT_DIR$/outputs/staff_140.out" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/solver.py" afterPath="$PROJECT_DIR$/solver.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -62,8 +28,8 @@
       <file leaf-file-name="solver.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/solver.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
-              <caret line="77" column="28" lean-forward="true" selection-start-line="77" selection-start-column="28" selection-end-line="77" selection-end-column="28" />
+            <state relative-caret-position="5126">
+              <caret line="233" column="0" lean-forward="true" selection-start-line="233" selection-start-column="0" selection-end-line="233" selection-end-column="0" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -74,8 +40,8 @@
       <file leaf-file-name="utils.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+            <state relative-caret-position="506">
+              <caret line="23" column="55" lean-forward="false" selection-start-line="23" selection-start-column="55" selection-end-line="23" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -84,8 +50,8 @@
       <file leaf-file-name="graveyard.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/graveyard.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="613">
-              <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+            <state relative-caret-position="528">
+              <caret line="26" column="32" lean-forward="false" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -104,7 +70,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>run</find>
       <find>todo</find>
       <find>l</find>
       <find>staff_inputs</find>
@@ -134,6 +99,7 @@
       <find>run_inputs</find>
       <find>sequence</find>
       <find>phase_2</find>
+      <find>best_found</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -154,8 +120,8 @@
         <option value="$PROJECT_DIR$/multicore_one_at_a_time_solver.py" />
         <option value="$PROJECT_DIR$/output_validator.py" />
         <option value="$PROJECT_DIR$/backtrack_solver.py" />
-        <option value="$PROJECT_DIR$/utils.py" />
         <option value="$PROJECT_DIR$/graveyard.py" />
+        <option value="$PROJECT_DIR$/utils.py" />
         <option value="$PROJECT_DIR$/solver.py" />
       </list>
     </option>
@@ -167,8 +133,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="150" />
-    <option name="y" value="328" />
+    <option name="x" value="155" />
+    <option name="y" value="-9" />
     <option name="width" value="1938" />
     <option name="height" value="1048" />
   </component>
@@ -524,7 +490,14 @@
       <option name="project" value="LOCAL" />
       <updated>1512094794650</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="cleaned solver">
+      <created>1512095841979</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1512095841979</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -535,13 +508,13 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34878588" sideWeight="0.26041666" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14128035" sideWeight="0.7395833" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289183" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14128035" sideWeight="0.7395833" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37086093" sideWeight="0.8286458" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -582,7 +555,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="utils." />
     <MESSAGE value="tried several new methods, updated utils" />
     <MESSAGE value="deleted old Main" />
     <MESSAGE value="updating the nights changes and outputs inputs" />
@@ -607,7 +579,8 @@
     <MESSAGE value="added backtrack solver" />
     <MESSAGE value="settings for cloud" />
     <MESSAGE value="put old version back in" />
-    <option name="LAST_COMMIT_MESSAGE" value="put old version back in" />
+    <MESSAGE value="cleaned solver" />
+    <option name="LAST_COMMIT_MESSAGE" value="cleaned solver" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1002,28 +975,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/graveyard.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="613">
-          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+        <state relative-caret-position="528">
+          <caret line="26" column="32" lean-forward="false" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="23" column="55" lean-forward="false" selection-start-line="23" selection-start-column="55" selection-end-line="23" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/solver.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="77" column="28" lean-forward="true" selection-start-line="77" selection-start-column="28" selection-end-line="77" selection-end-column="28" />
+        <state relative-caret-position="5126">
+          <caret line="233" column="0" lean-forward="true" selection-start-line="233" selection-start-column="0" selection-end-line="233" selection-end-column="0" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>

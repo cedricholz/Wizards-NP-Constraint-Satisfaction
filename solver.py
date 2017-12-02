@@ -52,12 +52,14 @@ def place_in_random_location(wizard, wizards, constraint_map):
 
 def solve(wizards, constraints, event, best_so_far_file):
     """
-    Takes an ordering of wizards, and one by one
-    (most constrained first) places them in the location
-    that causes the least amount of constraint violations.
-    If it gets stuck at a place where no single move
-    decreases the amount of violations, it shuffles
-    the ordering and starts again.
+    With a 55%, 45% chance, a random wizard or
+    the most constrained wizard is chosen, respectively.
+    That wizard is then placed in a position that violates
+    the least amount of constraints. If the violations
+    have not improved in at least 100 iterations, the chosen
+    wizard is placed into a random location. If it has
+    not improved in 500 iterations, the ordering is shuffled
+    and it begins again.
 
     Input:
         wizards: Number of constraint violations to beat
