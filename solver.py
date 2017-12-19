@@ -50,6 +50,7 @@ def place_in_random_location(wizard, wizards, constraint_map):
 
     return violations, wizards
 
+
 def solve(wizards, constraints, event, best_so_far_file):
     """
     With a 55%, 45% chance, a random wizard or
@@ -118,7 +119,6 @@ def solve(wizards, constraints, event, best_so_far_file):
     return wizards
 
 
-
 def run_inputs(event, input_file, output_file, best_so_far_file):
     print("\nBeginning " + input_file)
     num_wizards, num_constraints, wizards, constraints = utils.read_input(input_file)
@@ -129,9 +129,7 @@ def run_inputs(event, input_file, output_file, best_so_far_file):
 
 
 def multi_process(input_file, output_file, best_so_far_file):
-
     cpus_to_use = multiprocessing.cpu_count()
-
 
     p = multiprocessing.Pool(cpus_to_use)
     m = multiprocessing.Manager()
@@ -179,7 +177,6 @@ def phase_2():
 
 
 def staff_inputs_all_cores_each_input(to_do_list):
-
     for n in to_do_list:
         input_file = 'Staff_Inputs/staff_' + str(n) + '.in'
         output_file = 'Staff_Inputs/staff_' + str(n) + '.out'
@@ -208,7 +205,6 @@ def staff_inputs_one_per_core(to_do_list):
         for result in reslist:
             print(result.get())
 
-
 def student_inputs():
     input_directory = os.fsencode("all_submissions/inputs")
 
@@ -216,18 +212,27 @@ def student_inputs():
 
     output_files = set()
 
+    assigned_string = 'submission_4683299_input20.in,submission_4654473_inputs_input20.in,submission_4712312_inputs_input20.in,submission_4717234_inputs_input35.in,submission_4712495_input35.in,submission_4644349_input50.in,submission_4612341_inputs_input35.in,submission_4716792_input35.in,submission_4717273_input20.in,submission_4715978_input20.in,submission_4710007_input35.in,submission_4718708_input35.in,submission_4697862_input35.in,submission_4702665_inputs_input50.in,submission_4718439_input20.in,submission_4718738_inputs_input50.in,submission_4709529_input20.in,submission_4714521_input35.in,submission_4716635_inputs_input50.in,submission_4715167_inputs_input20.in,submission_4714355_inputs_input35.in,submission_4718430_input20.in,submission_4718752_inputs_input35.in,submission_4717736_input20.in,submission_4714920_input20.in,submission_4700429_inputs_input20.in,submission_4714249_inputs_input20.in,submission_4717053_inputs_input20.in,submission_4716458_input20.in,submission_4714629_inputs_input35.in,submission_4715335_inputs_input35.in,submission_4692735_inputs_input50.in,submission_4698173_input20.in,submission_4718629_input20.in,submission_4716307_inputs_input20.in,submission_4698322_inputs_input50.in,submission_4718782_inputs_input35.in,submission_4718708_input50.in,submission_4718636_inputs_input20.in,submission_4702737_input35.in,submission_4714765_inputs_input50.in,submission_4683124_inputs_input20.in,submission_4699902_input20.in,submission_4718666_input50.in,submission_4718446_inputs_input35.in,submission_4718204_inputs_input20.in,submission_4699284_input20.in,submission_4699902_input35.in'
+
+    assigned_set = set()
+    for filename in assigned_string.split(','):
+        filename = filename[:filename.index(".")]
+        assigned_set.add(filename)
+
+
     for file in os.listdir(output_directory):
         filename = os.fsdecode(file)
         filename = filename[:filename.index(".")]
         output_files.add(filename)
 
     input_files = []
+
     for file in os.listdir(input_directory):
         filename = os.fsdecode(file)
 
         filename = filename[:filename.index(".")]
 
-        if filename not in output_files:
+        if filename not in output_files and filename in assigned_set:
             input_files.append(filename)
 
     for filename in input_files:
@@ -238,9 +243,8 @@ def student_inputs():
 
 
 if __name__ == "__main__":
-
     # phase_2()
-    to_do_list = [140, 160, 180, 200, 220, 240, 260, 280, 300, 320, 340, 360, 380, 400]
+    # to_do_list = [140, 160, 180, 200, 220, 240, 260, 280, 300, 320, 340, 360, 380, 400]
     # staff_inputs_all_cores_each_input(to_do_list)
     # staff_inputs_one_per_core(to_do_list)
     student_inputs()
